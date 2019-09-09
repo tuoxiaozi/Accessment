@@ -1,11 +1,11 @@
 <view class="page">
   <view class="result-wrapper">
-    <view class="result-title">散光检测：</view>
-    <view a:if="{{false}}">
-      <view class="result-conclusion">疑似</view>
-      <view class="result-tip">您的疑似有散光症状，建议到专业机构检查</view>
+    <view a:if="{{type === '1' || type === '2'}}" class="result-title">{{title}}检测：</view>
+    <view a:if="{{type === '1' || type === '2'}}">
+      <view class="result-conclusion">{{res}}</view>
+      <view class="result-tip">{{tip}}</view>
     </view>
-    <view class="vison-result">
+    <view a:if="{{type === '0'}}" class="vison-result">
       <view class="vison-wrapper">
         <view class="vison-num">1.0</view>
         <view class="vison-title">左眼视力</view>
@@ -15,7 +15,7 @@
         <view class="vison-title">右眼视力</view>
       </view>
     </view>
-    <view a:show="{{false}}" class="tip-icon"></view>
+    <view a:if="{{type === '0'}}" class="tip-icon"><image mode="scaleToFill" src="/assets/vison_help.png"/></view>
   </view>
   <view class="button-wrapper">
     <view class="navbtn ency-btn">护眼百科</view>

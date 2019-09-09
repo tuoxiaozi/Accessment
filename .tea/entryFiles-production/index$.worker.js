@@ -24,13 +24,14 @@ self.requirePlugin = AFAppX.requirePlugin;
 
 function success() {
 require('../../app');
+require('../../pages/wikipedia/wikipedia');
 require('../../pages/index/index');
 require('../../pages/colorBlindTest/colorBlindTest');
 require('../../pages/astigmiaTest/astigmiaTest');
-require('../../pages/mine/mine');
-require('../../pages/visionTest/visionTest');
+require('../../pages/visonTest/visonTest');
+require('../../pages/testResult/testResult');
 require('../../pages/visionStart/visionStart');
-require('../../pages/wikipedia/wikipedia');
+require('../../pages/mine/mine');
 require('../../pages/visonRecord/visonRecord');
 require('../../pages/health/health');
 }

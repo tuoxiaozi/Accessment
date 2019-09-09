@@ -1,3 +1,16 @@
-<view>
-  New Page
+<view class="page">
+  <view class="bg-wrapper">
+    <image class="bg-img" mode="scaleToFill" src=""/>
+    <swiper indicator-dots="{{true}}" >
+      <block a:for="{{wikiLst}}">
+        <swiper-item >
+          <view class="swiper-wrapper">
+            <image class="swipper-img" mode="scaleToFill" src="/assets/{{item.pic}}.png"/>
+            <view class="title">{{item.title}}</view>
+            <view class="content">{{item.content}}</view>
+          <view/>
+        </swiper-item>
+      </block>
+    </swiper>
+  </view>
 </view>

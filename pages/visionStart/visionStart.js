@@ -1,4 +1,9 @@
 Page({
   data: {},
-  onLoad() {},
+  onLoad() { },
+  toVisionTest() {
+    my.navigateTo({
+      url: '/pages/visionTest/visionTest'
+    })
+  }
 });

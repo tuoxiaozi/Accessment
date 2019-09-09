@@ -22,13 +22,13 @@
     </view>
   </view>
   <view class="test-record">
-    <view class="record-item">
+    <view class="record-item" onTap="accessRecord">
       <image class="record-icon" mode="scaleToFill" src="/assets/record-icon.png"/>
       <view class="record-title">测评记录<text>(8)</text></view>
     </view>
-    <view class="record-item">
+    <view class="record-item" onTap="visonRecord">
       <image class="record-icon" mode="scaleToFill" src="/assets/record-icon.png"/>
-      <view class="record-title">测评记录<text>(8)</text></view>
+      <view class="record-title">视力记录<text>(8)</text></view>
     </view>
   </view>
 </view>

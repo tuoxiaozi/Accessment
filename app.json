@@ -1,12 +1,13 @@
 {
   "pages": [
-    "pages/colorBlindTest/colorBlindTest",
-    "pages/index/index",
-    "pages/astigmiaTest/astigmiaTest",
-    "pages/mine/mine",
-    "pages/visionTest/visionTest",
-    "pages/visionStart/visionStart",
     "pages/wikipedia/wikipedia",
+    "pages/index/index",
+    "pages/colorBlindTest/colorBlindTest",
+    "pages/astigmiaTest/astigmiaTest",
+    "pages/visonTest/visonTest",
+    "pages/testResult/testResult",
+    "pages/visionStart/visionStart",
+    "pages/mine/mine",
     "pages/visonRecord/visonRecord",
     "pages/health/health"
   ],

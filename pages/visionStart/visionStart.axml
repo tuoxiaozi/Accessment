@@ -1,3 +1,8 @@
-<view>
-  New Page
+<view class="page">
+  <view class="tip-content">
+    <image class="bg-img" mode="scaleToFill" src=""/>
+    <view class="tip-title">手机与眼睛相距50cm</view>
+  </view>
+  <view class="tip-text">请在屏幕往你看到的E字标开口方向点击方向按钮，系统会根据您的判断，自动生成检测结果</view>
+  <button onTap="toVisionTest" class="confirm-btn" size="default" type="primary">知道了，开始测试</button>
 </view>

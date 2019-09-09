@@ -9,7 +9,7 @@
         <view class="form-checkbox"><radio color="#FD7A4F" value="0"/></view>
       </view>
       <view class="form-item">
-        <view class="form-title">图中某线条黑而清晰</view>
+        <view class="form-title">图中各线条粗细均匀</view>
         <view class="form-checkbox"><radio  color="#FD7A4F"  value="1"/></view>
       </view>
       </radio-group>

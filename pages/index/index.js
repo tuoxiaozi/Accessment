@@ -8,33 +8,53 @@ Page({
   onLoad(query) {
     // 页面加载
   },
-  onReady() {
-    // 页面加载完成
-  },
-  onShow() {
-    // 页面显示
-  },
-  onHide() {
-    // 页面隐藏
-  },
-  onUnload() {
-    // 页面被关闭
-  },
-  onTitleClick() {
-    // 标题被点击
-  },
-  onPullDownRefresh() {
-    // 页面被下拉
-  },
+
   onReachBottom() {
     // 页面被拉到底部
   },
-  onShareAppMessage() {
-    // 返回自定义分享信息
-    return {
-      title: 'My App',
-      desc: 'My App description',
-      path: 'pages/index/index',
-    };
+
+  // 视力检测
+  toVisonTest() {
+    my.navigateTo({
+      url: '/pages/visionStart/visionStart'
+    })
   },
+
+  // 散光检测
+  toAstigmiaTest() {
+    my.navigateTo({
+      url: '/pages/astigmiaTest/astigmiaTest'
+    })
+  },
+
+  // 色盲检测
+  toAchromatopsia() {
+    my.navigateTo({
+      url: '/pages/colorBlindTest/colorBlindTest'
+    })
+  },
+
+  // 护眼百科
+  toWikipedia() {
+    my.navigateTo({
+      url: '/pages/wikipedia/wikipedia'
+    })
+  },
+
+  // 睡眠神器
+  toSleep() {
+    // my.navigateTo({
+    //   url: ''
+    // })
+    my.showToast({
+      content: '该功能正在开发中，敬请期待...'
+    })
+  },
+
+  // 更多
+  toHealth() {
+    my.switchTab({
+      url: '/pages/health/health'
+    })
+  }
 });

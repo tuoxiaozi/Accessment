@@ -8,18 +8,18 @@
   </swiper>
   <view class="menu-list">
     <view class="menu-item">
-      <view class="menu-icon" onTap="visonTest">
+      <view class="menu-icon" onTap="toVisonTest">
         <image mode="scaleToFill" src="/assets/hone_vision.png"/>
       </view>
       <view class="menu-text">视力检测</view>
     </view>
-    <view class="menu-item" onTap="visonTest">
+    <view class="menu-item" onTap="toAstigmiaTest">
       <view class="menu-icon">
         <image mode="scaleToFill" src="/assets/hone_astigmatism.png"/>
       </view>
       <view class="menu-text">散光检测</view>
     </view>
-    <view class="menu-item" onTap="visonTest">
+    <view class="menu-item" onTap="toAchromatopsia">
       <view class="menu-icon">
         <image mode="scaleToFill" src="/assets/hone_achromatopsia.png"/>
       </view>
@@ -27,10 +27,10 @@
     </view>
   </view>
   <view class="button-group">
-    <view class="button-item" onTap="visonTest">
+    <view class="button-item" onTap="toWikipedia">
       <image mode="scaleToFill" src="/assets/hone_wikipedia.png"/>
     </view>
-    <view class="button-item" onTap="visonTest">
+    <view class="button-item" onTap="toSleep">
       <image mode="scaleToFill" src="/assets/hone_sleep.png"/>
     </view>
   </view>

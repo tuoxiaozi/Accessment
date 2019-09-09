@@ -1,0 +1,49 @@
+.page {}
+
+.bg-wrapper {
+  height: 100vh;
+  background: #01254A;
+}
+
+.bg-img {
+  width: 100%;
+  height: 100%;
+}
+
+swiper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin: 128rpx 52rpx 0;
+  width: 100%;
+  height: 988rpx;
+}
+
+.swiper-wrapper {
+  width: 646rpx;
+  height: 988rpx;
+  background: #fff;
+}
+
+.swipper-img {
+  width: 646rpx;
+  height: 360rpx;
+}
+
+.title {
+  margin: 42rpx 0 0 32rpx;
+  line-height: 50rpx;
+  font-weight: 500;
+  font-size: 36rpx;
+  width: 584rpx;
+  overflow: hidden;
+  color: #2D2F34;
+}
+
+.content {
+  margin-top: 40rpx;
+  padding: 0 32rpx 32rpx;
+  line-height: 48rpx;
+  font-size: 32rpx;
+  color: #999;
+}

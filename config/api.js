@@ -16,13 +16,16 @@ const api = {
 function getTokenByCode(params) {
   return fetchData('/auth/jwt/guest/getTokenByCode', params, 'post');
 }
+/* ----------健康测评---------- */
+
+
+/* ----------中医测评---------- */
 
 //测评结果页面 获取个人信息
 function queryMyAcctUserInfoAndPoint(params) {
   return fetchData('/acct/accUser/acctUserInfo/queryMyAcctUserInfoAndPoint', params);
 }
 
-/* ----------中医测评---------- */
 // 判断状态接口
 function queryUserTcdPositionFlag(params) {
   return fetchData('/quesans/suvTcd/queryUserTcdPositionFlag', params, 'get')

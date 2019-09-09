@@ -14,10 +14,15 @@
 }
 
 .img-wrapper {
-  margin: 48rpx 60rpx 56rpx;
+  margin: 33rpx 60rpx 51rpx;
+  width: 533rpx;
+  height: 526rpx;
+  /* background: #333; */
+}
+
+.img-wrapper image{
   width: 488rpx;
-  height: 506rpx;
-  background: #333;
+  height: 488rpx;
 }
 
 .button-wrapper {
