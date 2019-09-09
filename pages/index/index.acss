@@ -26,16 +26,18 @@ swiper {
 
 .menu-icon {
   text-align: center;
+  width: 120rpx;
+  height: 120rpx;
 }
 
 .menu-icon image {
-  width: 86rpx;
-  height: 86rpx;
+  width: 120rpx;
+  height: 120rpx;
 }
 
 .menu-text {
   color: #666;
-  margin-top: 29rpx;
+  margin-top: 12rpx;
   line-height: 28rpx;
   text-align: center;
 }
@@ -48,16 +50,16 @@ swiper {
 
 .button-item {
   width: 332rpx;
-  height: 100rpx;
+  height: 128rpx;
 }
 
 .button-item image {
   width: 332rpx;
-  height: 100rpx;
+  height: 128rpx;
 }
 
 .recommand {
-  margin: 55rpx 32rpx 0;
+  margin: 27rpx 32rpx 0;
   display: flex;
   justify-content: space-between;
   line-height: 59rpx;

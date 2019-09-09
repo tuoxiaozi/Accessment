@@ -1,17 +1,14 @@
 {
   "pages": [
     "pages/colorBlindTest/colorBlindTest",
-    "pages/astigmiaTest/astigmiaTest",
     "pages/index/index",
+    "pages/astigmiaTest/astigmiaTest",
     "pages/mine/mine",
     "pages/visionTest/visionTest",
     "pages/visionStart/visionStart",
     "pages/wikipedia/wikipedia",
     "pages/visonRecord/visonRecord",
-    "pages/health/health",
-    "pages/visionTest/visionTest"
-
-    
+    "pages/health/health"
   ],
   "window": {
     "defaultTitle": "医贝健康测评"
