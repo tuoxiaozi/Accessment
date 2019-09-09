@@ -1,0 +1,38 @@
+{
+  "pages": [
+    "pages/colorBlindTest/colorBlindTest",
+    "pages/astigmiaTest/astigmiaTest",
+    "pages/index/index",
+    "pages/mine/mine",
+    "pages/visionTest/visionTest",
+    "pages/visionStart/visionStart",
+    "pages/wikipedia/wikipedia",
+    "pages/visonRecord/visonRecord",
+    "pages/health/health",
+    "pages/visionTest/visionTest"
+
+    
+  ],
+  "window": {
+    "defaultTitle": "医贝健康测评"
+  },
+  "tabBar": {
+    "textColor": "#dddddd",
+    "selectedColor": "#49a9ee",
+    "backgroundColor": "#ffffff",
+    "items": [
+      {
+        "pagePath": "pages/index/index",
+        "name": "首页"
+      },
+      {
+        "pagePath": "pages/health/health",
+        "name": "健康"
+      },
+      {
+        "pagePath": "pages/mine/mine",
+        "name": "我的"
+      }
+    ]
+  }
+}

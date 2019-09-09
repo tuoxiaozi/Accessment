@@ -1,0 +1,53 @@
+<view class="page">
+  <view class="tab">
+    <block a:for="{{['全部','视力','散光','色盲']}}">
+      <view class=" {{curIndex==index?'tabSel':''}}" onTap="tabClick" data-index="{{index}}">{{item}}</view>
+    </block>
+  </view>
+  <view class="listBox" a:if="{{all}}">
+    <!-- <block a:for="{{twArr}}"> -->
+      <view class="listItem">
+        <view a:if ="{{false}}" class="conclusion"> <view class="left-eye">左：0.6</view><view class="right-eye">右：1.0</view></view>
+        <view a:else class="conclusion">疑似有散光 </view>
+        <view class="time">2019-08-10 13:23 </view>
+      </view>
+      <view class="listItem">
+        <view a:if ="{{true}}" class="conclusion"> <view class="left-eye">左：0.6</view><view class="right-eye">右：1.0</view></view>
+        <view a:else class="conclusion">疑似有散光 </view>
+        <view class="time">2019-08-10 13:23 </view>
+      </view>
+    <!-- </block> -->
+  </view>
+  <view class="listBox" a:if="{{vison}}">
+    <!-- <block a:for="{{twArr}}"> -->
+      <view class="listItem">
+        <view class="conclusion"> <view class="left-eye">左：0.6</view><view class="right-eye">右：1.0</view></view>
+        <view class="time">2019-08-10 13:23 </view>
+      </view>
+    <!-- </block> -->
+  </view>
+  <view class="listBox" a:if="{{astigmia}}">
+    <!-- <block a:for="{{twArr}}"> -->
+      <view class="listItem">
+        <view class="conclusion">疑似有散光 </view>
+        <view class="time">2019-08-10 13:23 </view>
+      </view>
+      <view class="listItem">
+        <view  class="conclusion">疑似有散光 </view>
+        <view class="time">2019-08-10 13:23 </view>
+      </view>
+    <!-- </block> -->
+  </view>
+  <view class="listBox" a:if="{{colorBlind}}">
+    <!-- <block a:for="{{twArr}}"> -->
+      <view class="listItem">
+        <view  class="conclusion">疑似有色盲 </view>
+        <view class="time">2019-08-10 13:23 </view>
+      </view>
+      <view class="listItem">
+        <view class="conclusion">疑似有色盲 </view>
+        <view class="time">2019-08-10 13:23 </view>
+      </view>
+    <!-- </block> -->
+  </view>
+</view>

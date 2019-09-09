@@ -1,0 +1,19 @@
+<view class="wrap">
+  <view class="img-wrapper">
+    <view class="tip-img">
+      <image src="/assets/{{isRight?'right':'left'}}Eye.png"></image>
+    </view>
+    <view class="tip-text"><view  class="{{!isRight?'active-text':''}}">测左眼</view><view class="{{isRight?'active-text':''}}">测右眼</view></view>
+  </view>
+  <view class="vision-test {{showRes=='2'?'isWrong':''}}">
+    <view class="vision-test-wrapper">
+      <image src="/assets/E.png" style="width: {{imgWidth}}rpx;height: {{imgWidth}}rpx;transform:rotate({{imgDegree}}deg);"></image>
+    </view>
+  </view>
+  <view class="direction">
+    <button onTap="direction" class="up" data-dir="up">上</button>
+    <button onTap="direction" class="down" data-dir="down">下</button>
+    <button onTap="direction" class="left" data-dir="left">左</button>
+    <button onTap="direction" class="right" data-dir="right">右</button>
+  </view>
+</view>

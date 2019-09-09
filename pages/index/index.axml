@@ -1,0 +1,90 @@
+<view class="home">
+  <swiper indicator-color="#fff" indicator-active-color="#3CA0FF" indicator-dots="{{true}}" autoplay="{{true}}" interval="{{3000}}" circular="{{true}}">
+    <block a:for="{{banner}}">
+      <swiper-item>
+        <image data-index="{{index}}" class="home-swiper-item" onTap="goToLinkPage" src="{{item}}" mode="scaleToFill"></image>
+      </swiper-item>
+    </block>
+  </swiper>
+  <view class="menu-list">
+    <view class="menu-item">
+      <view class="menu-icon" onTap="visonTest">
+        <image mode="scaleToFill" src="/assets/hone_vision.png"/>
+      </view>
+      <view class="menu-text">视力检测</view>
+    </view>
+    <view class="menu-item" onTap="visonTest">
+      <view class="menu-icon">
+        <image mode="scaleToFill" src="/assets/hone_astigmatism.png"/>
+      </view>
+      <view class="menu-text">散光检测</view>
+    </view>
+    <view class="menu-item" onTap="visonTest">
+      <view class="menu-icon">
+        <image mode="scaleToFill" src="/assets/hone_achromatopsia.png"/>
+      </view>
+      <view class="menu-text">色盲检测</view>
+    </view>
+  </view>
+  <view class="button-group">
+    <view class="button-item" onTap="visonTest">
+      <image mode="scaleToFill" src="/assets/hone_wikipedia.png"/>
+    </view>
+    <view class="button-item" onTap="visonTest">
+      <image mode="scaleToFill" src="/assets/hone_sleep.png"/>
+    </view>
+  </view>
+  <view class="recommand">
+    <view class="recommand-title">健康精选</view>
+    <view class="more" onTap="toHealth">更多
+      <image mode="scaleToFill" src="/assets/rightb.png"/>
+    </view>
+  </view>
+  <view class="recommand-list">
+    <view class="list-item" a:for="{{testLst}}">
+      <view class="list-content">
+        <view class="test-title">中医体质智慧评估</view>
+        <view a:if="{{false}}" class="test-price">17.2元</view>
+        <view a:else class="test-free">免费</view>
+        <view class="test-nums">已测评：57万人</view>
+      </view>
+      <image class="test-img" mode="scaleToFill" src="/assets/test-img.png"/>
+    </view>
+    <view class="list-item">
+      <view class="list-content">
+        <view class="test-title">中医体质智慧评估中医体质智慧评估中医体质</view>
+        <view a:if="{{true}}" class="test-price">17.2元</view>
+        <view a:else class="test-free">免费</view>
+        <view class="test-nums">已测评：57万人</view>
+      </view>
+      <image class="test-img" mode="scaleToFill" src="/assets/test-img.png"/>
+    </view>
+    <view class="list-item">
+      <view class="list-content">
+        <view class="test-title">中医体质智慧评估</view>
+        <view a:if="{{false}}" class="test-price">17.2</view>
+        <view a:else class="test-free">免费</view>
+        <view class="test-nums">已测评：57万人</view>
+      </view>
+      <image class="test-img" mode="scaleToFill" src="/assets/test-img.png"/>
+    </view>
+    <view class="list-item">
+      <view class="list-content">
+        <view class="test-title">中医体质智慧评估</view>
+        <view a:if="{{false}}" class="test-price">17.2</view>
+        <view a:else class="test-free">免费</view>
+        <view class="test-nums">已测评：57万人</view>
+      </view>
+      <image class="test-img" mode="scaleToFill" src="/assets/test-img.png"/>
+    </view>
+    <view class="list-item">
+      <view class="list-content">
+        <view class="test-title">中医体质智慧评估</view>
+        <view a:if="{{false}}" class="test-price">17.2</view>
+        <view a:else class="test-free">免费</view>
+        <view class="test-nums">已测评：57万人</view>
+      </view>
+      <image class="test-img" mode="scaleToFill" src="/assets/test-img.png"/>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,59 @@
+.page {
+}
+
+.tab {
+  height: 89rpx;
+  z-index: 9;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  border-bottom: 1rpx solid #eeeeee;
+}
+
+.tabSel {
+  position: relative;
+  color: #45A4FF;
+}
+
+.tabSel:after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: -30rpx;
+  width: 86rpx;
+  height: 4rpx;
+  margin-left: -43rpx;
+  background-color: #45A4FF;
+  border-radius: 2rpx;
+}
+
+.listBox {
+  margin: 32rpx 32rpx 0;
+}
+
+.listItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 32rpx;
+  padding: 32rpx;
+  height: 119rpx;
+  box-shadow: 0rpx 2rpx 6rpx 0rpx rgba(204, 204, 204, 0.5);
+  border-radius: 2rpx;
+}
+
+.conclusion {
+  display: flex;
+  justify-content: space-between;
+  width: 290rpx;
+  font-size: 32rpx;
+  font-weight: 500;
+  color: #2F89F2;
+  line-height: 45rpx;
+}
+
+.time {
+  color: #999;
+  height: 33rpx;
+  font-size: 24rpx;
+}

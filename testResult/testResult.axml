@@ -1,0 +1,86 @@
+<view class="page">
+  <view class="result-wrapper">
+    <view class="result-title">散光检测：</view>
+    <view a:if="{{false}}">
+      <view class="result-conclusion">疑似</view>
+      <view class="result-tip">您的疑似有散光症状，建议到专业机构检查</view>
+    </view>
+    <view class="vison-result">
+      <view class="vison-wrapper">
+        <view class="vison-num">1.0</view>
+        <view class="vison-title">左眼视力</view>
+      </view>
+      <view class="vison-wrapper">
+        <view class="vison-num">1.0</view>
+        <view class="vison-title">右眼视力</view>
+      </view>
+    </view>
+    <view a:show="{{false}}" class="tip-icon"></view>
+  </view>
+  <view class="button-wrapper">
+    <view class="navbtn ency-btn">护眼百科</view>
+    <view class="navbtn share-btn">分享</view>
+  </view>
+  <view class="form-item">
+    <view class="form-label">视力检测</view>
+    <view class="form-content">未检测</view>
+    <view class="arrow-wrapper" a:if="{{true}}">
+      <image class="form-arrow" src=""/>
+    </view>
+    <view a:else class="re-test">重测</view>
+  </view>
+  <view class="draw__cellLine"></view>
+  <view class="form-item">
+    <view class="form-label">视力检测</view>
+    <view class="form-content">未检测</view>
+    <view class="arrow-wrapper"a:if="{{true}}">
+      <image class="form-arrow" mode="arror" src=""/>
+    </view>
+    <view a:else class="re-test">重测</view>
+  </view>
+  <view class="draw__cellLine"></view>
+  <view class="form-item">
+    <view class="form-label">视力检测</view>
+    <view class="form-content">未检测</view>
+    <view class="arrow-wrapper" a:if="{{false}}">
+      <image class="form-arrow" mode="arror" src=""/>
+    </view>
+    <view a:else class="re-test">重测</view>
+  </view>
+  <view class="draw__cellLine"></view>
+  <view class="modal-wrapper" a:if="{{false}}">
+    <view class="modal">
+      <view class="modal-body">
+        <view class="content-title">近视分度标准参考：</view>>
+        <view class="content-standard">300度以下属于轻度近视</view>
+        <view class="content-standard">300-600度以下属于中度近视</view>
+        <view class="content-standard">600度以上属于重度近视</view>
+        <view class="content-title">视力表对应近视度数参考：</view>
+        <view class="degrees-item">
+          <view>0.8=100度</view>
+          <view>0.6=150度</view>
+        </view>
+        <view class="degrees-item">
+          <view>0.8=100度</view>
+          <view>0.6=150度</view>
+        </view>
+        <view class="degrees-item">
+          <view>0.5=200度</view>
+          <view>0.6=150度</view>
+        </view>
+        <view class="degrees-item">
+          <view>0.8=100度</view>
+          <view>0.6=150度</view>
+        </view>
+        <view class="degrees-item">
+          <view>0.8=100度</view>
+          <view>0.6=150度</view>
+        </view>
+        <view class="degrees-item"></view>
+        <view class="degrees-item"></view>
+        <view class="degrees-item"></view>
+      </view>
+      <view class="modal-footer">知道了</view>
+    </view>
+  </view>
+</view>

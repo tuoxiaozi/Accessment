@@ -1,0 +1,19 @@
+<view class="page">
+  <view class="content-wrapper">
+    <view class="title">通过选择您所看到的数字来测试您是否色盲</view>
+    <view class="img-wrapper">
+      <image mode="scaleToFill" src="/assets/{{imgUrl}}.png"/>
+      <!-- <image mode="scaleToFill" src="/assets/daltonismo6.png"/> -->
+    </view>
+    <view class="tip">上下滑动选择图片中的数字</view>
+  </view>
+  <picker-view onChange="bindChangepicker" indicator-class="indicator" style="width: 30%; height: 120px;margin-left:35%" value="{{valueSingle}}">
+    <picker-view-column style="width:100%">
+      <view style="line-height: 50px;" a:for="{{column}}">{{item}}</view>
+    </picker-view-column>
+  </picker-view>
+  <view class="button-wrapper">
+    <view class="btn" onTap="cancel">看不清</view>
+    <view class="btn" onTap="confirm">确认</view>
+  </view>
+</view>

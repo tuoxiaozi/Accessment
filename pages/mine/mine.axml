@@ -1,0 +1,34 @@
+<view class="page">
+  <view class="user-info">
+    <image class="user-avatar" mode="scaleToFill" src="/assets/user-avatar.png"/>
+    <view class="user-name">用户名称</view>
+  </view>
+  <view class="conclusion">
+    <view class="conclusion-item">
+      <view class="conclusion-test">0.8</view>
+      <view class="conclusion-title">左眼视力</view>
+    </view>
+    <view class="conclusion-item">
+      <view class="conclusion-test">0.8</view>
+      <view class="conclusion-title">右眼视力</view>
+    </view>
+    <view class="conclusion-item">
+      <view class="conclusion-test">正常</view>
+      <view class="conclusion-title">散光</view>
+    </view>
+    <view class="conclusion-item">
+      <view class="conclusion-test">疑似</view>
+      <view class="conclusion-title">色盲</view>
+    </view>
+  </view>
+  <view class="test-record">
+    <view class="record-item">
+      <image class="record-icon" mode="scaleToFill" src="/assets/record-icon.png"/>
+      <view class="record-title">测评记录<text>(8)</text></view>
+    </view>
+    <view class="record-item">
+      <image class="record-icon" mode="scaleToFill" src="/assets/record-icon.png"/>
+      <view class="record-title">测评记录<text>(8)</text></view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,19 @@
+<view class="page">
+  <view class="page-wapper">
+    <view class="test-title">请保持直视图片，选择您观察的结果</view>
+    <image class="test-img" mode="scaleToFill" src="/assets/daltonismo8.png"/>
+    <view class="form-wapper">
+      <radio-group onChange="radiochange">
+      <view class="form-item">
+        <view class="form-title">图中某线条黑而清晰</view>
+        <view class="form-checkbox"><radio color="#FD7A4F" value="0"/></view>
+      </view>
+      <view class="form-item">
+        <view class="form-title">图中某线条黑而清晰</view>
+        <view class="form-checkbox"><radio  color="#FD7A4F"  value="1"/></view>
+      </view>
+      </radio-group>
+    </view>
+    <button class="submit-btn" onTap="submit">提交</button>
+  </view>
+</view>

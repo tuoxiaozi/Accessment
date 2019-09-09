@@ -1,0 +1,52 @@
+.recommand-list {
+  margin: 0 32rpx;
+}
+
+.list-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 236rpx;
+  border-bottom: 1rpx solid #eee;
+}
+
+.list-content {}
+
+.test-title {
+  line-height: 48rpx;
+  width: 436rpx;
+  font-size: 34rpx;
+  color: #ccc;
+}
+
+.test-price {
+  margin-top: 6rpx;
+  font-size: 32rpx;
+  font-weight: 500;
+  color: #F4801B;
+  line-height: 45rpx;
+}
+
+.test-free {
+  margin-top: 16rpx;
+  width: 72rpx;
+  line-height: 40rpx;
+  text-align: center;
+  background: #F5B342;
+  color: #E77C1F;
+  border-radius: 4rpx;
+}
+
+.test-nums {
+  margin-top: 33rpx;
+  font-size: 22rpx;
+  color: #999;
+  line-height: 30rpx;
+}
+
+.test-img {
+  display: block;
+  width: 212rpx;
+  height: 156rpx;
+  border-radius: 4rpx;
+}

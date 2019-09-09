@@ -1,0 +1,79 @@
+.page {}
+
+.user-info {
+  display: flex;
+  align-items: center;
+  margin-left: 32rpx;
+  height: 180rpx;
+}
+
+.user-avatar {
+  margin-right: 32rpx;
+  width: 120rpx;
+  height: 120rpx;
+  border-radius: 60rpx;
+}
+
+.user-name {
+  line-height: 50rpx;
+  font-size: 36rpx;
+  font-weight: 500;
+  color: #333;
+}
+
+.conclusion {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 190rpx;
+  margin: 12rpx 32rpx;
+  padding: 0 21rpx 0 29rpx;
+  box-shadow: 0px 1px 8px 1px rgba(230, 239, 245, 0.72);
+}
+
+.conclusion-item {
+  text-align: center;
+}
+
+.conclusion-test {
+  margin-bottom: 6rpx;
+  line-height: 72rpx;
+  font-size: 60rpx;
+}
+
+.conclusion-title {
+  line-height: 37rpx;
+  font-size: 26rpx;
+  color: #999;
+}
+
+.test-record {
+  margin: 80rpx
+}
+
+.record-item {
+  text-align: center;
+}
+
+.record-icon {
+  width: 100rpx;
+  height: 100rpx;
+}
+
+.record-title {
+  margin-top: 24rpx;
+  line-height: 48rpx;
+  color: #333;
+  font-size: 34rpx;
+}
+
+.record-title text {
+  color: #999;
+  font-size: 29rpx;
+  line-height: 48rpx;
+}
+
+.test-record {
+  display: flex;
+  justify-content: space-around;
+}
