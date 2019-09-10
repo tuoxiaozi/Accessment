@@ -8,8 +8,8 @@ const api = {
   getAlipayTradeCreate,
   savePayCallBack,
   saveData,
-  queryMyReportListPage
-
+  queryMyReportListPage,
+  queryMyAcctUserInfoAndPoint
 };
 
 //获取token

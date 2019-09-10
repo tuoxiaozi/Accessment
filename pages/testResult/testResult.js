@@ -39,5 +39,26 @@ Page({
     } else {
       // my.navigateBack()
     }
+  },
+  reTest(e) {
+    const type = e.currentTarget.dataset.type
+    console.log('type', type)
+    switch(type) {
+      case '0': //视力检测
+      my.redirectTo({
+        url: "/pages/visonTest/visonTest"
+      })
+      break
+      case '1': // 散光检测
+      my.redirectTo({
+        url: "/pages/astigmiaTest/astigmiaTest"
+      })
+      break
+      case '2': // 色盲检测
+      my.redirectTo({
+        url: "/pages/colorBlindTest/colorBlindTest"
+      })
+      break
+    }
   }
 });

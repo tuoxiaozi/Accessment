@@ -3,7 +3,7 @@ Page({
   onLoad() { },
   toVisionTest() {
     my.navigateTo({
-      url: '/pages/visionTest/visionTest'
+      url: '/pages/visonTest/visonTest'
     })
   }
 });

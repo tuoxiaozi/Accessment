@@ -13,8 +13,11 @@
 
 .bg-img {
   display: block;
-  height: 768rpx;
-  width: 686rpx;
+  position: absolute;
+  top: 157rpx;
+  left: 98rpx;
+  height: 498rpx;
+  width: 514rpx;
   background: #eee;
 }
 

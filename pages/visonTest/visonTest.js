@@ -164,6 +164,6 @@ Page({
     this.setData({
       value: { leftEye: this.data.leftEye, rightEye: this.data.rightEye }
     }),
-      my.navigateTo({ url: '/pages/testResult/testResult?type=0&res=' + this.data.value })
+      my.redirectTo({ url: '/pages/testResult/testResult?type=0&res=' + this.data.value })
   }
 })

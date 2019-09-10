@@ -17,7 +17,7 @@ Page({
       return !1
     }
 
-    my.navigateTo({ url: '/pages/testResult/testResult?type=1&res='+this.data.value})
+    my.redirectTo({ url: '/pages/testResult/testResult?type=1&res=' + this.data.value })
 
     console.log('提交成功', this.data.value)
   }

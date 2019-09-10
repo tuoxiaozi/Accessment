@@ -104,7 +104,7 @@ swiper {
   line-height: 42rpx;
   width: 416rpx;
   font-size: 34rpx;
-  color: #ccc;
+  color: #333;
   overflow: hidden;
   /*??? */
 }

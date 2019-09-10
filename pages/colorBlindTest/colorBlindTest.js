@@ -113,6 +113,6 @@ Page({
   },
   // 跳转结果页
   navtoRes() {
-    my.navigateTo({ url: '/pages/testResult/testResult?type=2&res=' + this.data.value })
+    my.redirectTo({ url: '/pages/testResult/testResult?type=2&res=' + this.data.value })
   }
 });
