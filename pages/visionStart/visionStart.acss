@@ -18,7 +18,6 @@
   left: 98rpx;
   height: 498rpx;
   width: 514rpx;
-  background: #eee;
 }
 
 .tip-title {

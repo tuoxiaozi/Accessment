@@ -1,47 +1,11 @@
-  <view class="recommand-list">
-    <view class="list-item" a:for="{{testLst}}">
-      <view class="list-content">
-        <view class="test-title">中医体质智慧评估</view>
-        <view a:if="{{false}}" class="test-price">17.2元</view>
-        <view a:else class="test-free">免费</view>
-        <view class="test-nums">已测评：57万人</view>
-      </view>
-      <image class="test-img" mode="scaleToFill" src="/assets/test-img.png"/>
+<view class="recommand-list">
+  <view class="list-item">
+    <view class="list-content">
+      <view class="test-title">中医体质智慧评估</view>
+      <view a:if="{{false}}" class="test-price">17.2元</view>
+      <view a:else class="test-free">免费</view>
+      <view class="test-nums">已测评：57万人</view>
     </view>
-    <view class="list-item">
-      <view class="list-content">
-        <view class="test-title">中医体质智慧评估中医体质智慧评估中医体质</view>
-        <view a:if="{{true}}" class="test-price">17.2元</view>
-        <view a:else class="test-free">免费</view>
-        <view class="test-nums">已测评：57万人</view>
-      </view>
-      <image class="test-img" mode="scaleToFill" src="/assets/test-img.png"/>
-    </view>
-    <view class="list-item">
-      <view class="list-content">
-        <view class="test-title">中医体质智慧评估</view>
-        <view a:if="{{false}}" class="test-price">17.2</view>
-        <view a:else class="test-free">免费</view>
-        <view class="test-nums">已测评：57万人</view>
-      </view>
-      <image class="test-img" mode="scaleToFill" src="/assets/test-img.png"/>
-    </view>
-    <view class="list-item">
-      <view class="list-content">
-        <view class="test-title">中医体质智慧评估</view>
-        <view a:if="{{false}}" class="test-price">17.2</view>
-        <view a:else class="test-free">免费</view>
-        <view class="test-nums">已测评：57万人</view>
-      </view>
-      <image class="test-img" mode="scaleToFill" src="/assets/test-img.png"/>
-    </view>
-    <view class="list-item">
-      <view class="list-content">
-        <view class="test-title">中医体质智慧评估</view>
-        <view a:if="{{false}}" class="test-price">17.2</view>
-        <view a:else class="test-free">免费</view>
-        <view class="test-nums">已测评：57万人</view>
-      </view>
-      <image class="test-img" mode="scaleToFill" src="/assets/test-img.png"/>
-    </view>
+    <image class="test-img" mode="scaleToFill" src="/assets/medical-access.png"/>
   </view>
+</view>

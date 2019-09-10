@@ -1,4 +1,4 @@
-const app = getApp();
+const app = getApp()
 import {getTokenByCode} from '../../config/api'
 
 Page({

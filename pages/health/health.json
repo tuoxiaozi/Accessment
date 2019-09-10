@@ -1,1 +1,6 @@
-{}
+{ 
+  "defaultTitle": "健康",
+  "pullRefresh": false,
+  "usingComponents": {
+  }
+}

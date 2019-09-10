@@ -9,7 +9,8 @@
     "pages/visionStart/visionStart",
     "pages/mine/mine",
     "pages/visonRecord/visonRecord",
-    "pages/health/health"
+    "pages/health/health",
+    "pages/auth/auth"
   ],
   "window": {
     "defaultTitle": "医贝健康测评"
@@ -21,15 +22,21 @@
     "items": [
       {
         "pagePath": "pages/index/index",
-        "name": "首页"
+        "name": "首页",
+        "icon": "/assets/tab_hone_normal.png",
+        "activeIcon": "/assets/tab_hone_selected.png"
       },
       {
         "pagePath": "pages/health/health",
-        "name": "健康"
+        "name": "健康",
+         "icon": "/assets/tab_health_normal.png",
+        "activeIcon": "/assets/tab_health_selected.png"
       },
       {
         "pagePath": "pages/mine/mine",
-        "name": "我的"
+        "name": "我的",
+         "icon": "/assets/tab_my_normal.png",
+        "activeIcon": "/assets/tab_my_selected.png"
       }
     ]
   }

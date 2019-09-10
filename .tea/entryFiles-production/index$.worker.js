@@ -30,6 +30,7 @@ require('../../pages/visionStart/visionStart');
 require('../../pages/mine/mine');
 require('../../pages/visonRecord/visonRecord');
 require('../../pages/health/health');
+require('../../pages/auth/auth');
 }
 self.bootstrapApp ? self.bootstrapApp({ success }) : success();
 }

@@ -1,3 +1,4 @@
+import { addEyeTestRecord } from '../../config/api'
 const n = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
 Page({
   data: {
@@ -101,14 +102,28 @@ Page({
       this.setData({
         value: '0' // 疑似色盲
       })
-      this.navtoRes()
+      this._addEyeTestRecord()
       console.log('检测结果： 疑似色盲')
     } else if (this.data.rightNum >= 3) {
       this.setData({
         value: '1' // 正常
       })
-      this.navtoRes()
+      this._addEyeTestRecord()
       console.log('检测结果： 正常')
+    }
+  },
+
+  async _addEyeTestRecord() {
+    let value = this.data.value
+    console.log(value)
+    let res = await addEyeTestRecord({
+      colorBlindIsNormal: value,
+      type: 3 // 色盲类型
+    })
+    if (res.data.code === 0) {
+      this.navtoRes()
+    } else {
+      console.log(res)
     }
   },
   // 跳转结果页

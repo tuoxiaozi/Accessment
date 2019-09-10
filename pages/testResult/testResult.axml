@@ -32,7 +32,7 @@
   <view class="draw__cellLine"></view>
   <view class="form-item">
     <view class="form-label">散光检测</view>
-    <view class="form-content">未检测</view>
+    <view class="form-content">{{astigmatismIsNormal}}</view>
     <view class="arrow-wrapper"a:if="{{true}}">
       <image class="form-arrow" mode="arror" src="/assets/rightb.png"/>
     </view>
@@ -41,7 +41,7 @@
   <view class="draw__cellLine"></view>
   <view class="form-item">
     <view class="form-label">色盲检测</view>
-    <view class="form-content">未检测</view>
+    <view class="form-content">{{colorBlindIsNormal}}</view>
     <view class="arrow-wrapper" a:if="{{false}}">
       <image class="form-arrow" mode="arror" src="/assets/rightb.png"/>
     </view>
