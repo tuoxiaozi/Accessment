@@ -87,50 +87,57 @@ swiper {
 }
 
 .list-item {
+  margin-top: 32rpx;
+  padding-left: 32rpx;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 236rpx;
-  border-bottom: 1rpx solid #eee;
+  height: 220rpx;
+  box-shadow: 0 4rpx 8rpx 0rpx rgba(191, 191, 191, 0.4);
+  border-radius: 6rpx;
+  background: rgba(248, 248, 248, .4);
 }
 
 .list-content {}
 
 .test-title {
-  line-height: 48rpx;
-  width: 436rpx;
+  line-height: 42rpx;
+  width: 416rpx;
   font-size: 34rpx;
   color: #ccc;
+  overflow: hidden;
+  /*??? */
 }
 
 .test-price {
-  margin-top: 6rpx;
-  font-size: 32rpx;
+  font-size: 38rpx;
   font-weight: 500;
   color: #F4801B;
-  line-height: 45rpx;
+  line-height: 53rpx;
 }
 
 .test-free {
-  margin-top: 16rpx;
-  width: 72rpx;
+  margin-top: 4rpx;
   line-height: 40rpx;
-  text-align: center;
-  background: #F5B342;
-  color: #E77C1F;
-  border-radius: 4rpx;
+  font-size: 28rpx;
+  color: #F4801B;
 }
 
 .test-nums {
-  margin-top: 33rpx;
-  font-size: 22rpx;
-  color: #999;
-  line-height: 30rpx;
+  margin-top: 22rpx;
+  width: 213rpx;
+  line-height: 40rpx;
+  font-size: 28rpx;
+  color: #fff;
+  text-align: center;
+  font-size: 24rpx;
+  background: rgba(244, 128, 27, 1);
+  border-radius: 4rpx;
 }
 
 .test-img {
   display: block;
-  width: 212rpx;
-  height: 156rpx;
+  width: 220rpx;
+  height: 220rpx;
   border-radius: 4rpx;
 }

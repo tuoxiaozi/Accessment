@@ -1,8 +1,8 @@
 require('@alipay/appx-compiler/lib/sjsEnvInit');
 require('./config$');
 
-require('../../pages/wikipedia/wikipedia');
 require('../../pages/index/index');
+require('../../pages/wikipedia/wikipedia');
 require('../../pages/colorBlindTest/colorBlindTest');
 require('../../pages/astigmiaTest/astigmiaTest');
 require('../../pages/visonTest/visonTest');

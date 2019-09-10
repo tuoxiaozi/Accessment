@@ -1,7 +1,7 @@
 {
   "pages": [
-    "pages/wikipedia/wikipedia",
     "pages/index/index",
+    "pages/wikipedia/wikipedia",
     "pages/colorBlindTest/colorBlindTest",
     "pages/astigmiaTest/astigmiaTest",
     "pages/visonTest/visonTest",
