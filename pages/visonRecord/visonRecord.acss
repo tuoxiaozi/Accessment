@@ -3,53 +3,8 @@
   width: 100%;
 }
 
-.page-body {
-  height: 100%;
-  width: calc( 100% - 64rpx);
-  /* margin: 0 32rpx; */
-}
-
-.swb {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  z-index: 1999;
-}
-
-.sw {
-  display: flex;
-  justify-content: space-around;
-  height: 80rpx;
-  border-bottom: solid 1rpx #E7E7E7;
-  z-index: 99;
-  background: #fff;
-  width: 100%;
-  box-sizing: border-box;
-}
-
-.sw .sec {
-  line-height: 80rpx;
-}
-
-.sec.act {
-  transition: color .4s;
-  color: #45A4FF;
-}
-
-.cur {
-  position: absolute;
-  z-index: 9999;
-  background: #45A4FF;
-  width: 79rpx;
-  height: 4rpx;
-  margin-left: 60rpx;
-  left: 0%;
-  transition: left 0.4s ease-out;
-  bottom: 0;
-}
-
 .mytsb {
-  margin: 104rpx 32rpx 32rpx;
+  margin: 32rpx;
 }
 
 .mytsc {

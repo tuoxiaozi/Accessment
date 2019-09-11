@@ -126,7 +126,6 @@ Page({
               testindex: 0
             })
             console.log('=====>右眼视力', this.data.rightEye)
-            debugger
             let a = Math.floor(4 * Math.random());
             this.data.curDirection = this.data.testDirection[a].direction, this.setData({
               imgWidth: this.data.testdata[this.data.testindex].size,

@@ -1,15 +1,12 @@
 <view class="myts">
-  <view class="swb">
-    <view class="sw">
-      <text a:for="{{['全部','视力','散光','色盲']}}" a:for-index='i' onTap="switchHomeTag" class="sec c9 tc {{nowTag==i?'act':''}}" data-tag={{i}}>{{item}}</text>
-    </view>
-    <view class="cur" style="left:{{leftPt}}%"></view>
-  </view>
   <view class="mytsb">
     <view class="mytsc" a:for="{{lists}}" a:for-item="t" onTap="toRepeat">
-      <view a:if="{{false}}" class="left"></view>
-      <view a:else class="left">{{t.astigmatismIsNormal?'正常':'疑似'}}</view>
-      <view class="right">{{t.createTime}}</view>
+      <view class="left">
+        <view class="title">實力</view>
+        <view class="title">{{t.createTime}}</view>
+      </view>
+      <view a:if="{{}}"class="right"></view>
+      <view class="right"></view>
     </view>
   </view>
 </view>

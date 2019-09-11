@@ -1,9 +1,9 @@
 require('@alipay/appx-compiler/lib/sjsEnvInit');
 require('./config$');
 
+require('../../pages/visonRecord/visonRecord');
 require('../../pages/index/index');
 require('../../pages/testResult/testResult');
-require('../../pages/visonRecord/visonRecord');
 require('../../pages/wikipedia/wikipedia');
 require('../../pages/colorBlindTest/colorBlindTest');
 require('../../pages/astigmiaTest/astigmiaTest');

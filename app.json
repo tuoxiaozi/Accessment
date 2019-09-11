@@ -1,8 +1,8 @@
 {
   "pages": [
+    "pages/visonRecord/visonRecord",
     "pages/index/index",
     "pages/testResult/testResult",
-    "pages/visonRecord/visonRecord",
     "pages/wikipedia/wikipedia",
     "pages/colorBlindTest/colorBlindTest",
     "pages/astigmiaTest/astigmiaTest",
