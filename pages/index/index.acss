@@ -1,17 +1,17 @@
 .home {}
 
-swiper {
-  margin-top: 16rpx;
-  height: 280rpx;
+swipper {
+  padding: 0 32rpx;
 }
 
-.home-swiper-item {
+.home-swiper-item{
+  margin: 0 32rpx;
+  width: calc(100% - 64rpx);
   height: 280rpx;
   border-radius: 6rpx;
   box-sizing: border-box;
   overflow: hidden;
   display: inline-block;
-  width: 100%;
 }
 
 .menu-list {

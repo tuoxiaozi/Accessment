@@ -1,184 +1,74 @@
-const app = getApp();
-// import {batchSetQuestionIsRead,queryMyQuestionPageByParam,qusUserDeleteById} from '../../config/api'
-
+import { queryPageByParam } from '/config/api'
 Page({
   data: {
-    swipeIndex: null,
-    curIndex: 0,
-    all: true,
-    vison: false,
-    astigmia: false,
-    colorBlind: false,
-    pages: '',
-    pageNum: 1,
-    isReplay: 'Z',
-    twArr: [],
-    showbtline: false,
-    delId: '',
-  },
-
-  onLoad() {
-    // this._batchSetQuestionIsRead()
-  },
-  onShow() {
-    this.setData({
-      all: !0,
-      noFlag: !1,
-      curIndex: 0,
-      pages: '',
-      pageNum: 1,
-      twArr: [],
-      showbtline: false,
-      delId: '',
-    })
-    // this._queryMyQuestionPageByParam()
-  },
-  onReady() {
-
-  },
-  // tab点击切换
-  tabClick(e) {
-    let index = e.currentTarget.dataset['index'];
-    this.setData({
-      curIndex: index,
-      pages: '',
-      pageNum: 1,
-      twArr: [],
-      showbtline: false,
-    })
-    switch (index) {
-      case 0:
-            this.setData({
-              all: true,
-              vison: false,
-              astigmia: false,
-              colorBlind: false,
-            })
-            break
-      case 1:
-            this.setData({
-              all: false,
-              vison: true,
-              astigmia: false,
-              colorBlind: false,
-            })
-            break
-      case 2:
-            this.setData({
-              all: false,
-              vison: false,
-              astigmia: true,
-              colorBlind: false,
-            })
-            break
-      case 3:
-            this.setData({
-              all: false,
-              vison: false,
-              astigmia: false,
-              colorBlind: true,
-            })
-            break
-
-    }
-    // this._queryMyQuestionPageByParam()
-  },
-  //标记为已读
-  async _batchSetQuestionIsRead() {
-    const result = await batchSetQuestionIsRead({
-      type: 0,
-    })
-    //console.log('已读',result)
-  },
-  //列表
-  async _queryMyQuestionPageByParam() {
-    my.showLoading({
-      content: '加载中...',
-      delay: 100
-    });
-    const result = await queryMyQuestionPageByParam({
-      pageNum: this.data.pageNum,
-      pageSize: 10,
-      queState: this.data.isReplay
-    })
-    console.log('list', result)
-    my.hideLoading()
-    this.setData({ pages: result.data.data.pages })
-    let list = result.data.data.rows
-    this.data.twArr = this.data.twArr.concat(list)
-    this.setData({ twArr: this.data.twArr })
-    console.log(this.data.twArr)
-  },
-  //to 详情
-  toDetail(e) {
-    let index = e.currentTarget.dataset['index'];
-    let id = this.data.twArr[index].id
-    my.navigateTo({ url: '/pages/circledetail/circledetail?id=' + id })
-  },
-  //to 回答
-  toAnswer(e) {
-    let index = e.currentTarget.dataset['index'];
-    let id = this.data.twArr[index].id
-    my.navigateTo({ url: '/pages/answer/answer?id=' + id })
-  },
-  //删除
-  async _qusUserDeleteById() {
-    const result = await qusUserDeleteById(this.data.delId)
-    //console.log('删除',result)
-    if (result.data.code === 0) {
-      my.showToast({
-        content: '删除成功',
-        success: () => {
-          this.setData({
-            pageNum: 1,
-            twArr: [],
-            showbtline: false,
-          })
-          this._queryMyQuestionPageByParam()
-        },
-      });
-    } else {
-      my.showToast({
-        content: result.data.message,
-      });
+    lists: [],
+    nowTag: 0,
+    tsStateImg: null,
+    st: 0,
+    pages: {
+      size: 10,
+      pages: 1,
+      page: 1
     }
   },
-  onRightItemClick(e) {
-    my.confirm({
-      title: '提示',
-      content: '确定要删除吗？',
-      confirmButtonText: '确定',
-      cancelButtonText: '取消',
-      success: (result) => {
-        if (result.confirm) {
-          let indx = this.data.swipeIndex
-          let id = this.data.twArr[indx].id
-          this.setData({ delId: id })
-          this._qusUserDeleteById()
-          e.done();
-        } else {
-
-        }
-      },
-    });
+  onLoad(t) {
+    this.getReportLst()
   },
-  onItemClick(e) {
-
-  },
-  onSwipeStart(e) {
-    this.setData({
-      swipeIndex: e.index,
-    });
-  },
-  onReachBottom(e) {
-    if (this.data.pages > this.data.pageNum) {
+  onReachBottom() {
+    if(this.data.pages.page < this.data.pages.pages) {
       this.setData({
-        pageNum: ++this.data.pageNum
-      }, () => {
-        // this._queryMyQuestionPageByParam()
+        pages: {
+          size: this.data.pages.size,
+          pages: this.data.pages.pages,
+          page: this.data.pages.page + 1
+        }
       })
-    } else {
-      this.setData({ showbtline: true })
+      this.getReportLst(this.data.st)
     }
   },
-});
+  // 切换tabBar
+  switchHomeTag(t) {
+    this.setData({
+      lists: [],
+      pages: {
+        size: this.data.pages.size,
+        pages: 1,
+        page: 1
+      }
+    })
+    var e = t.currentTarget.dataset.tag,n = this
+    e != n.data.nowTag && n.setData({
+      nowTag: e,
+      leftPt: 25 * e
+    }), this.getReportLst(e)
+  },
+  // 获取的历史测评列表
+  getReportLst(st) {
+    let n = this
+    n.setData({st})
+    my.showLoading({
+      content: "加载中...",
+    }), queryPageByParam({
+      pageNum: n.data.pages.page,
+      pageSize:n.data.pages.size,
+      myState: st
+    }).then(s => {
+      console.log('--------->s', s.data.data.rows)
+      if (my.hideLoading(), s.data && s.data.data.rows){
+        n.setData({
+          lists:  [...this.data.lists,...s.data.data.rows],
+          pages: {
+            size: this.data.pages.size,
+            pages: s.data.data.total / this.data.pages.size,
+            page: this.data.pages.page
+          }
+        })
+      }
+    }).catch(e=> {
+      my.hideLoading();
+      try {
+        t.default.showToast(e.data.message)
+      } catch (t) { }
+    })
+  }
+})

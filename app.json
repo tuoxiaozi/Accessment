@@ -1,17 +1,16 @@
 {
   "pages": [
     "pages/index/index",
+    "pages/testResult/testResult",
+    "pages/visonRecord/visonRecord",
     "pages/wikipedia/wikipedia",
     "pages/colorBlindTest/colorBlindTest",
     "pages/astigmiaTest/astigmiaTest",
     "pages/visonTest/visonTest",
-    "pages/testResult/testResult",
     "pages/visionStart/visionStart",
     "pages/mine/mine",
-    "pages/visonRecord/visonRecord",
     "pages/health/health",
-    "pages/auth/auth"
-  ],
+    "pages/auth/auth"  ],
   "window": {
     "defaultTitle": "医贝健康测评"
   },

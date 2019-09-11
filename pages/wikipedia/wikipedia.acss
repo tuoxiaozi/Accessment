@@ -2,7 +2,7 @@
 
 .bg-wrapper {
   height: 100vh;
-  background: #01254A;
+  background: #454A54;
 }
 
 .bg-img {
@@ -17,12 +17,16 @@ swiper {
   margin: 128rpx 52rpx 0;
   width: 100%;
   height: 988rpx;
+  border-radius: 8rpx;
+
 }
 
 .swiper-wrapper {
   width: 646rpx;
   height: 988rpx;
   background: #fff;
+  border-radius: 8rpx;
+
 }
 
 .swipper-img {
@@ -45,5 +49,5 @@ swiper {
   padding: 0 32rpx 32rpx;
   line-height: 48rpx;
   font-size: 32rpx;
-  color: #999;
+  color: #333;
 }

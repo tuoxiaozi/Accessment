@@ -17,7 +17,7 @@ const request = (
         headers['Authorization'] = token.data
         // headers['XWS-TOKEN'] = authInfo.data['XWS-TOKEN']
     }
-    console.log(env.base_url_prod + url)
+    // console.log(env.base_url_prod + url)
     my.request({
         url: env.base_url_prod + url,
         data,

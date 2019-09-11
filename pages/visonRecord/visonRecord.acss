@@ -1,59 +1,79 @@
-.page {
+.myts {
+  background: #fff;
+  width: 100%;
 }
 
-.tab {
-  height: 89rpx;
-  z-index: 9;
+.page-body {
+  height: 100%;
+  width: calc( 100% - 64rpx);
+  /* margin: 0 32rpx; */
+}
+
+.swb {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1999;
+}
+
+.sw {
   display: flex;
-  align-items: center;
   justify-content: space-around;
-  border-bottom: 1rpx solid #eeeeee;
+  height: 80rpx;
+  border-bottom: solid 1rpx #E7E7E7;
+  z-index: 99;
+  background: #fff;
+  width: 100%;
+  box-sizing: border-box;
 }
 
-.tabSel {
-  position: relative;
+.sw .sec {
+  line-height: 80rpx;
+}
+
+.sec.act {
+  transition: color .4s;
   color: #45A4FF;
 }
 
-.tabSel:after {
-  content: '';
+.cur {
   position: absolute;
-  left: 50%;
-  bottom: -30rpx;
-  width: 86rpx;
+  z-index: 9999;
+  background: #45A4FF;
+  width: 79rpx;
   height: 4rpx;
-  margin-left: -43rpx;
-  background-color: #45A4FF;
-  border-radius: 2rpx;
+  margin-left: 60rpx;
+  left: 0%;
+  transition: left 0.4s ease-out;
+  bottom: 0;
 }
 
-.listBox {
-  margin: 32rpx 32rpx 0;
+.mytsb {
+  margin: 104rpx 32rpx 32rpx;
 }
 
-.listItem {
+.mytsc {
+  box-sizing: border-box;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-top: 32rpx;
-  padding: 32rpx;
   height: 119rpx;
-  box-shadow: 0rpx 2rpx 6rpx 0rpx rgba(204, 204, 204, 0.5);
-  border-radius: 2rpx;
+  line-height: 45rpx;
+  margin-bottom: 32rpx;
+  padding: 36rpx 32rpx;
+  background: #fff;
+  box-shadow: 0px 2px 10px 0px rgba(153, 153, 153, 0.2);
+  border-radius: 4px;
 }
 
-.conclusion {
-  display: flex;
-  justify-content: space-between;
-  width: 290rpx;
+.left {
+  line-height: 45rpx;
+  color: #2F89F2;
   font-size: 32rpx;
   font-weight: 500;
-  color: #2F89F2;
-  line-height: 45rpx;
 }
 
-.time {
+.right {
   color: #999;
-  height: 33rpx;
   font-size: 24rpx;
 }

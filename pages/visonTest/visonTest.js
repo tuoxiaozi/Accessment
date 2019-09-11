@@ -2,6 +2,7 @@ Page({
   data: {
     rightEye: "",  //右眼视力
     leftEye: "",    // 左眼视力
+    isNormal: "0",  // 是否正常
     value: null,
     testdata: [{  // 视力数据
       sight: "1.0",
@@ -160,10 +161,29 @@ Page({
       }
     }, 2e2))
   },
+
+  // 页面跳转
   navtoRes() {
+    this.jugmentIsNormal()
     this.setData({
-      value: { leftEye: this.data.leftEye, rightEye: this.data.rightEye }
+      value: { leftEye: this.data.leftEye, rightEye: this.data.rightEye, isNormal: this.data.isNormal }
     }),
-      my.redirectTo({ url: '/pages/testResult/testResult?type=0&res=' + this.data.value })
+      console.log('跳转钱携带的值====>', this.data.value)
+    my.redirectTo({ url: '/pages/testResult/testResult?type=0&res=' + this.data.value })
+  },
+
+  // 判断是否正常
+  jugmentIsNormal() {
+    const leftEye = this.data.leftEye, rightEye = this.data.rightEye
+    console.log('左眼视力===>', leftEye, '右眼视力===>', rightEye)
+    if (leftEye <= 1.0 && rightEye <= 1.0) {  // 视力正常
+      this.setData({
+        isNormal: '1'
+      })
+    } else {
+      this.setData({ // 视力不正常
+        isNormal: '0'
+      })
+    }
   }
 })

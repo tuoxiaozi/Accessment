@@ -8,7 +8,8 @@ Page({
     myopiaLeft: '',
     myopiaRight: '',
     astigmatismIsNormal: '',
-    colorBlindIsNormal: ''
+    colorBlindIsNormal: '',
+    showModal: !1
   },
   onLoad(t) {
     this.showRes(t)
@@ -19,7 +20,6 @@ Page({
   // 查询用户眼睛健康测试报告
   async _queryUserEyeTestReport() {
     let res = await queryUserEyeTestReport()
-    console.log(res)
     if (res.data.code === 0) {
       let { astigmatismIsNormal, colorBlindIsNormal, myopiaLeft, myopiaRight } = res.data.data
       this.setData({
@@ -45,19 +45,19 @@ Page({
   },
   // 展示结果
   showRes(t) {
-    console.log('携带参数=>', t.res)
+    console.log('接收的值=>', JSON.stringify(t))
     if (typeof t.type !== 'undefined' && typeof t.res !== 'undefined') {
       this.setData({ type: t.type })
       switch (t.type) {
         // 视力结果
         case '0':
-          console.log('当前视力结果')
+          console.log('当前视力结果',t.res)
           this.setData({
-            leftEye: res.leftEye,
-            rightEye: res.rightEye,
+            leftEye: t.res.leftEye,
+            rightEye: t.res.rightEye,
             res: t.res === '1' ? '正常' : '疑似散光',
             tip: t.res === '1' ? '恭喜您，您没有散光症状' : '您的疑似有散光症状，建议到专业机构检查',
-            bgimg: t.res === '1' ? 'vision-suspected' : 'vision-normal'
+            bgimg: t.res === '1' ? 'vision-normal' : 'vision-normal'
           })
           break
         // 散光结果
@@ -66,7 +66,7 @@ Page({
             title: '散光',
             res: t.res === '1' ? '正常' : '疑似散光',
             tip: t.res === '1' ? '恭喜您，您没有散光症状' : '您的疑似有散光症状，建议到专业机构检查',
-            bgimg: t.res === '1' ? 'ast-suspected' : 'ast-normal'
+            bgimg: t.res === '1' ? 'ast-normal' : 'ast-suspected'
           }),
             console.log('当前散光结果')
           break;
@@ -84,6 +84,8 @@ Page({
       my.navigateBack()
     }
   },
+
+  // 重新开始
   reTest(e) {
     const type = e.currentTarget.dataset.type
     console.log('type', type)
@@ -104,5 +106,23 @@ Page({
         })
         break
     }
+  },
+
+  toggleModal() {
+    this.setData({
+      showModal: !this.data.showModal
+    })
+  },
+
+  // 跳转护眼百科
+  toWiki() {
+    my.redirectTo({
+      url: "/pages/wikipedia/wikipedia"
+    })
+  },
+
+  // 分享
+  share() {
+    my.showSharePanel()
   }
-});
+})

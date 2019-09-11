@@ -1,15 +1,30 @@
 .page {
-  margin: 32rpx 32rpx 0;
+  padding: 32rpx 32rpx 0;
 }
 
 .result-wrapper {
+  position: relative;
   display: flex;
   flex-direction: column;
   padding: 0 24rpx;
   height: 350rpx;
-  background: #333;
   color: #E7EAEC;
-  position: relative;
+  border-radius: 4rpx;
+}
+
+.content-wrapper {
+  z-index: 666;
+}
+
+.res-bg {
+  margin: 0 24rpx;
+  position: absolute;
+  top: 0;
+  left: -24rpx;
+  width: 100%;
+  height: 100%;
+  border-radius: 4rpx;
+  z-index: 0;
 }
 
 .result-title {
@@ -33,7 +48,7 @@
 .vison-result {
   display: flex;
   align-items: center;
-  height: 500rpx;
+  height: 350rpx;
 }
 
 .vison-wrapper {
@@ -42,7 +57,19 @@
   text-align: center;
 }
 
+.vison-num {
+  line-height: 81rpx;
+  font-size: 58rpx;
+}
+
+.vison-title {
+  line-height: 45rpx;
+  margin-top: 5rpx;
+  font-size: 32rpx;
+}
+
 .tip-icon {
+  z-index: 666;
   position: absolute;
   top: 24rpx;
   right: 24rpx;
@@ -96,6 +123,7 @@
 }
 
 .form-content {
+  display: flex;
   color: #F4801B;
 }
 
@@ -104,9 +132,14 @@
 }
 
 .form-arrow {
-  width: 17px;
-  height: 32px;
+  width: 17rpx;
+  height: 32rpx;
   margin-left: 43rpx;
+}
+
+.form-arrow image {
+  width: 17rpx;
+  height: 32rpx;
 }
 
 .re-test {
@@ -133,6 +166,7 @@
   width: 100%;
   height: 100%;
   background: rgba(0, 0, 0, .65);
+  z-index: 999;
 }
 
 .modal {
@@ -149,21 +183,32 @@
 }
 
 .content-title {
-  display:block;
+  display: block;
   color: #2F89F2;
   line-height: 38px;
-  padding-bottom: 22rpx;
 }
 
-.content-standard {
-  display: inline-block;
+.content-text {
+  margin-bottom: 22rpx;
+}
+
+.content-text text {
+  display: block;
   margin-bottom: 28rpx;
+  line-height: 38rpx;
+  font-size: 28rpx;
+  color: #333;
 }
 
-.degrees-item {
+.degree-wrapper {
   display: flex;
-  justify-content: space-aro;
-  margin-bottom: 28rpx;
+}
+
+.text1, .text2 {
+  font-size: 32rpx;
+  line-height: 38rpx;
+  margin-bottom: 22rpx;
+  color: #333;
 }
 
 .modal-footer {
@@ -176,5 +221,13 @@
   border-top: 1rpx solid #eee;
   color: #2F89F2;
   font-weight: 500;
-  font-size:36rpx;
+  font-size: 36rpx;
+}
+
+.degrees-item1 {
+  width: 410rpx;
+}
+
+.degrees-item2 {
+  flex: 1;
 }

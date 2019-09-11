@@ -1,86 +1,92 @@
 <view class="page">
   <view class="result-wrapper">
-    <view a:if="{{type === '1' || type === '2'}}" class="result-title">{{title}}检测：</view>
-    <view a:if="{{type === '1' || type === '2'}}">
-      <view class="result-conclusion">{{res}}</view>
-      <view class="result-tip">{{tip}}</view>
-    </view>
-    <view a:if="{{type === '0'}}" class="vison-result">
-      <view class="vison-wrapper">
-        <view class="vison-num">1.0</view>
-        <view class="vison-title">左眼视力</view>
+    <image class="res-bg" mode="scaleToFill" src="/assets/{{bgimg}}.png"/>
+    <view class="content-wrapper">
+      <view a:if="{{type === '1' || type === '2'}}" class="result-title">{{title}}检测：</view>
+      <view a:if="{{type === '1' || type === '2'}}">
+        <view class="result-conclusion">{{res}}</view>
+        <view class="result-tip">{{tip}}</view>
       </view>
-      <view class="vison-wrapper">
-        <view class="vison-num">1.0</view>
-        <view class="vison-title">右眼视力</view>
+      <view a:if="{{type === '0'}}" class="vison-result">
+        <view class="vison-wrapper">
+          <view class="vison-num">{{myopiaLeft}}</view>
+          <view class="vison-title">左眼视力</view>
+        </view>
+        <view class="vison-wrapper">
+          <view class="vison-num">{{myopiaRight}}</view>
+          <view class="vison-title">右眼视力</view>
+        </view>
       </view>
+      <view a:if="{{type === '0'}}" onTap="toggleModal" class="tip-icon">
+        <image mode="scaleToFill" src="/assets/vision-help.png"/></view>
     </view>
-    <view a:if="{{type === '0'}}" class="tip-icon"><image mode="scaleToFill" src="/assets/vison_help.png"/></view>
   </view>
   <view class="button-wrapper">
-    <view class="navbtn ency-btn">护眼百科</view>
-    <view class="navbtn share-btn">分享</view>
+    <view class="navbtn ency-btn" onTap="toWiki">护眼百科</view>
+    <view class="navbtn share-btn" onTap="share">分享</view>
   </view>
   <view class="form-item">
     <view class="form-label">视力检测</view>
-    <view class="form-content">未检测</view>
-    <view class="arrow-wrapper" a:if="{{true}}">
-      <image class="form-arrow" src="/assets/rightb.png"/>
+    <view a:if="{{true}}" class="form-content">
+      <view style="margin-right: 15px">左眼{{myopiaLeft}}</view>
+      <view>右眼{{myopiaRight}}</view>
+    </view>
+    <view a:else class="form-content">未检测</view>
+    <view class="arrow-wrapper"  a:if="{{true}}">
+      <image class="form-arrow" onTap="reTest" data-type="0" src="/assets/jump.png"/>
     </view>
     <view onTap="reTest" a:else class="re-test" data-type="0">重测</view>
   </view>
   <view class="draw__cellLine"></view>
   <view class="form-item">
     <view class="form-label">散光检测</view>
-    <view class="form-content">{{astigmatismIsNormal}}</view>
-    <view class="arrow-wrapper"a:if="{{true}}">
-      <image class="form-arrow" mode="arror" src="/assets/rightb.png"/>
+    <view a:if="{{astigmatismIsNormal !=='undefined'}}" class="form-content">{{astigmatismIsNormal}}</view>
+    <view  a:else  class="form-content">未检测</view>
+    <view class="arrow-wrapper" a:if="{{true}}">
+      <image class="form-arrow" onTap="reTest"  data-type="1" src="/assets/jump.png"/>
     </view>
     <view onTap="reTest" a:else class="re-test" data-type="1">重测</view>
   </view>
   <view class="draw__cellLine"></view>
   <view class="form-item">
     <view class="form-label">色盲检测</view>
-    <view class="form-content">{{colorBlindIsNormal}}</view>
-    <view class="arrow-wrapper" a:if="{{false}}">
-      <image class="form-arrow" mode="arror" src="/assets/rightb.png"/>
+    <view a:if="{{astigmatismIsNormal !=='undefined'}}" class="form-content">{{colorBlindIsNormal}}</view>
+    <view a:else class="form-content">未检测</view>
+    <view class="arrow-wrapper"  a:if="{{true}}">
+      <image onTap="reTest" class="form-arrow" data-type="2" src="/assets/jump.png"/>
     </view>
     <view onTap="reTest" a:else class="re-test" data-type="2">重测</view>
   </view>
   <view class="draw__cellLine"></view>
-  <view class="modal-wrapper" a:if="{{false}}">
+  <view class="modal-wrapper" a:if="{{showModal}}">
     <view class="modal">
       <view class="modal-body">
-        <view class="content-title">近视分度标准参考：</view>>
-        <view class="content-standard">300度以下属于轻度近视</view>
-        <view class="content-standard">300-600度以下属于中度近视</view>
-        <view class="content-standard">600度以上属于重度近视</view>
+        <view class="content-title">近视分度标准参考：</view>
+        <view class="content-text">
+          <text>300度以下属于轻度近视</text>
+          <text>300-600度以下属于中度近视</text>
+          <text>300度以下属于轻度近视</text>
+          <text>600度以上属于重度近视</text>
+        </view>
         <view class="content-title">视力表对应近视度数参考：</view>
-        <view class="degrees-item">
-          <view>0.8=100度</view>
-          <view>0.6=150度</view>
+        <view class="degree-wrapper">
+          <view class="degrees-item1">
+            <view class="text1">0.8=100度</view>
+            <view class="text2">0.5=200度</view>
+            <view class="text2">0.3=300-350度</view>
+            <view class="text2">0.2=450度</view>
+            <view class="text2">0.12=550-600度</view>
+          </view>
+          <view class="degrees-item2">
+            <view class="text1"0.6=150度></view>
+            <view class="text2"0.4=250度></view>
+            <view class="text2">0.25=400度</view>
+            <view class="text2">0.15=500度</view>
+            <view class="text2">0.1=650度</view>
+          </view>
         </view>
-        <view class="degrees-item">
-          <view>0.8=100度</view>
-          <view>0.6=150度</view>
-        </view>
-        <view class="degrees-item">
-          <view>0.5=200度</view>
-          <view>0.6=150度</view>
-        </view>
-        <view class="degrees-item">
-          <view>0.8=100度</view>
-          <view>0.6=150度</view>
-        </view>
-        <view class="degrees-item">
-          <view>0.8=100度</view>
-          <view>0.6=150度</view>
-        </view>
-        <view class="degrees-item"></view>
-        <view class="degrees-item"></view>
-        <view class="degrees-item"></view>
       </view>
-      <view class="modal-footer">知道了</view>
+      <view class="modal-footer" onTap="toggleModal">知道了</view>
     </view>
   </view>
 </view>
