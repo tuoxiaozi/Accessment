@@ -5,11 +5,11 @@
   </view>
   <view class="conclusion">
     <view class="conclusion-item">
-      <view class="conclusion-test">{{myopiaLeft || '--'}}</view>
+      <view class="conclusion-test">{{myopiaLeft.toFixed(1) || '--'}}</view>
       <view class="conclusion-title">左眼视力</view>
     </view>
     <view class="conclusion-item">
-      <view class="conclusion-test">{{myopiaRight || '--'}}</view>
+      <view class="conclusion-test">{{myopiaRight.toFixed(1) || '--'}}</view>
       <view class="conclusion-title">右眼视力</view>
     </view>
     <view class="conclusion-item">

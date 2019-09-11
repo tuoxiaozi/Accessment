@@ -7,6 +7,8 @@ Page({
     bgimg: '',
     myopiaLeft: '',
     myopiaRight: '',
+    leftEye: '',
+    rightEye: '',
     astigmatismIsNormal: '',
     colorBlindIsNormal: '',
     showModal: !1
@@ -34,9 +36,9 @@ Page({
   // 处理字符串
   transformStr(val) {
     if (val !== 'undefined') {
-      if (val === 1) {
+      if (val == 1) {
         return '正常'
-      } else if (val === 0) {
+      } else if (val == 0) {
         return '疑似'
       }
     } else {
@@ -51,14 +53,15 @@ Page({
       switch (t.type) {
         // 视力结果
         case '0':
-          console.log('当前视力结果',t.res)
+          console.log('当前视力结果',t)
           this.setData({
-            leftEye: t.res.leftEye,
-            rightEye: t.res.rightEye,
+            leftEye: t.left,
+            rightEye: t.right,
             res: t.res === '1' ? '正常' : '疑似散光',
             tip: t.res === '1' ? '恭喜您，您没有散光症状' : '您的疑似有散光症状，建议到专业机构检查',
             bgimg: t.res === '1' ? 'vision-normal' : 'vision-normal'
           })
+          console.log(this.data.myopiaLeft,'+++++',this.data.myopiaRight)
           break
         // 散光结果
         case '1':

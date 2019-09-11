@@ -21,14 +21,35 @@
   border-radius: 4px;
 }
 
+.title {
+font-size:32rpx;
+color: #333;
+line-height:45rpx;
+}
+
+.date {
+  font-size: 24rpx;
+  color: #999;
+  line-height: 33rpx;
+}
+
 .left {
+}
+
+.right {
+  display: flex;
   line-height: 45rpx;
-  color: #2F89F2;
+  color: #F4801B;
   font-size: 32rpx;
   font-weight: 500;
 }
 
-.right {
-  color: #999;
-  font-size: 24rpx;
+.re {
+  margin-left: 48rpx;
+}
+
+.le, .re {
+  color: #F4801B;
+  font-size: 32rpx;
+  line-height: 45rpx;
 }

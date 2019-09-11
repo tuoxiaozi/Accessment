@@ -1,3 +1,5 @@
+import { addEyeTestRecord } from '../../config/api'
+
 Page({
   data: {
     rightEye: "",  //右眼视力
@@ -84,10 +86,9 @@ Page({
           console.log('=====>右眼视力', this.data.rightEye)
           this.setData({ // 开始测左眼
             isRight: !1,
-            testindex: this.data.testdata.findIndex(e => e.sight == this.data.rightEye) // 左眼使用上一次的数据
-            // testindex: 0
+            // testindex: this.data.testdata.findIndex(e => e.sight == this.data.rightEye) // 左眼使用上一次的数据
+            testindex: 0
           })
-          console.log('===========>testindex', this.data.testindex)
           let n = Math.floor(4 * Math.random())
           this.setData({ // 抽到随机
             imgWidth: this.data.testdata[this.data.testindex].size,
@@ -101,7 +102,7 @@ Page({
             leftEye: this.data.testdata[this.data.testindex].sight
           })
           console.log('=====>左眼视力', this.data.leftEye)
-          this.navtoRes()
+          this._addEyeTestRecord()
         }
       } else {  // 正确低于两个，继续切换
         let n = Math.floor(4 * Math.random());
@@ -134,7 +135,7 @@ Page({
             }), this.data.wrongNums = 0;
           } else { // 当前为右眼
             this.data.leftEye = this.data.testdata[this.data.testindex].sight
-            this.navtoRes()
+            this._addEyeTestRecord()
           }
         } else { // 错误超过两个， 但少于7个
           let a = Math.floor(4 * Math.random())
@@ -161,21 +162,33 @@ Page({
     }, 2e2))
   },
 
+  async _addEyeTestRecord() {
+    let res = await addEyeTestRecord({
+      myopiaLeft: this.data.leftEye,
+      myopiaRight: this.data.rightEye,
+      type: 1 // 散光类型
+    })
+    if (res.data.code === 0) {
+     this.navtoRes()
+    } else {
+      console.log(res)
+    }
+  },
+
   // 页面跳转
   navtoRes() {
     this.jugmentIsNormal()
     this.setData({
-      value: { leftEye: this.data.leftEye, rightEye: this.data.rightEye, isNormal: this.data.isNormal }
+      value: this.data.isNormal
     }),
-      console.log('跳转钱携带的值====>', this.data.value)
-    my.redirectTo({ url: '/pages/testResult/testResult?type=0&res=' + this.data.value })
+    my.redirectTo({ url: '/pages/testResult/testResult?type=0&res=' + this.data.isNormal+'&left='+this.data.leftEye+'&right='+this.data.rightEye })
   },
 
   // 判断是否正常
   jugmentIsNormal() {
     const leftEye = this.data.leftEye, rightEye = this.data.rightEye
     console.log('左眼视力===>', leftEye, '右眼视力===>', rightEye)
-    if (leftEye <= 1.0 && rightEye <= 1.0) {  // 视力正常
+    if (leftEye >= 1.0 && rightEye >= 1.0) {  // 视力正常
       this.setData({
         isNormal: '1'
       })

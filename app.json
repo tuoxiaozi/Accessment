@@ -1,7 +1,7 @@
 {
   "pages": [
-    "pages/visonRecord/visonRecord",
     "pages/index/index",
+    "pages/visonRecord/visonRecord",
     "pages/testResult/testResult",
     "pages/wikipedia/wikipedia",
     "pages/colorBlindTest/colorBlindTest",

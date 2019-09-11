@@ -40,7 +40,8 @@ Page({
             size: this.data.pages.size,
             pages: s.data.data.total / this.data.pages.size,
             page: this.data.pages.page
-          }
+          },
+          str: this.transformStr()
         })
       }
     }).catch(e => {
@@ -49,5 +50,19 @@ Page({
         t.default.showToast(e.data.message)
       } catch (t) { }
     })
+  },
+  // 处理数据
+  transformStr(type) {
+    switch (type) {
+      case '1':
+        return '视力'
+        break
+      case '2':
+        return '散光'
+        break
+      case '3':
+        return '色盲'
+        break
+    } 
   }
 })

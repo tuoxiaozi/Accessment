@@ -2,11 +2,15 @@
   <view class="mytsb">
     <view class="mytsc" a:for="{{lists}}" a:for-item="t" onTap="toRepeat">
       <view class="left">
-        <view class="title">實力</view>
-        <view class="title">{{t.createTime}}</view>
+        <view class="title">{{t.type == "1"?"视力":t.type=="2"?"散光":"色盲"}}</view>
+        <view class="date">{{t.createTime}}</view>
       </view>
-      <view a:if="{{}}"class="right"></view>
-      <view class="right"></view>
+      <view a:if="{{true}}" class="right">
+      <view a:if="{{t.type == '1'}}" class="right">
+        <view class="le">左眼：{{t.myopiaLeft.toFixed(1)}}</view>
+        <view class="re">右眼：{{t.myopiaRight.toFixed(1)}}</view>
+      </view>
+      <view a:else class="right">{{t.colorBlindIsNormal || t.astigmatismIsNormal?"正常":"疑似"}}</view>
     </view>
   </view>
 </view>

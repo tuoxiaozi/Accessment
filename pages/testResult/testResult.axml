@@ -9,11 +9,11 @@
       </view>
       <view a:if="{{type === '0'}}" class="vison-result">
         <view class="vison-wrapper">
-          <view class="vison-num">{{myopiaLeft}}</view>
+          <view class="vison-num">{{leftEye}}</view>
           <view class="vison-title">左眼视力</view>
         </view>
         <view class="vison-wrapper">
-          <view class="vison-num">{{myopiaRight}}</view>
+          <view class="vison-num">{{rightEye}}</view>
           <view class="vison-title">右眼视力</view>
         </view>
       </view>
