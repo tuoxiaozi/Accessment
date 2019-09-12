@@ -27,4 +27,24 @@ Page({
     }]
   },
   onLoad() { },
+      swiperChange: function(t) {
+        if ("touch" == t.detail.source) if (0 == t.detail.current) {
+            var a = this.data.swiperError;
+            a += 1, this.setData({
+                swiperError: a
+            }), a >= 3 ? (console.error(this.data.swiperError), this.setData({
+                current: this.data.preIndex
+            }), this.setData({
+                swiperError: 0
+            })) : this.setData({
+                currentIndex: t.detail.current
+            });
+        } else this.setData({
+            currentIndex: t.detail.current
+        }), this.setData({
+            swiperError: 0
+        }); else this.setData({
+            currentIndex: t.detail.current
+        });
+    },
 });

@@ -11,4 +11,11 @@
       </swiper-item>
     </block>
   </swiper>
+    <!-- <swiper  class="swiper" current="{{current}}" duration="{{duration}}" interval="{{interval}}" nextMargin="56rpx" previousMargin="56rpx">
+        <swiper-item class="{{index==currentIndex?'slide_item_active':''}}" wx:for="{{banner}}" wx:key="ad_id">
+            <view catchtap="skipAd" data-adid="{{item.ad_id}}" data-link="{{item.ad_link}}" data-manner="{{item.target}}">
+                <image class="swiper-image" lazyLoad="true" src="{{item.ad_code}}"></image>
+            </view>
+        </swiper-item>
+    </swiper> -->
 </view>
