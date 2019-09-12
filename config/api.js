@@ -12,7 +12,8 @@ const api = {
   queryMyAcctUserInfoAndPoint,
   queryPageByParam,
   queryUserEyeTestReport,
-  addEyeTestRecord
+  addEyeTestRecord,
+  getmeCategory
 };
 
 //获取token
@@ -20,7 +21,10 @@ function getTokenByCode(params) {
   return fetchData('/auth/jwt/guest/getTokenByCode', params, 'post');
 }
 /* ----------健康测评---------- */
-
+// 首页 获取轮播列表
+function getmeCategory(params) {
+  return fetchData('/sharecom/notGrant/guest/queryValidAdvertisingByCategory?category=4', params);
+}
 // 新增视力测试记录
 function addEyeTestRecord(params) {
   return fetchData('/quesans/eyeTestRecord/addEyeTestRecord', params, 'post');

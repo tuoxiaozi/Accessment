@@ -24,11 +24,11 @@
   <view class="test-record">
     <view class="record-item" onTap="accessRecord">
       <image class="record-icon" mode="scaleToFill" src="/assets/access-record.png"/>
-      <view class="record-title">测评记录<text>(8)</text></view>
+      <view class="record-title">测评记录<text>({{userSuveryRecordNumber}})</text></view>
     </view>
     <view class="record-item" onTap="visonRecord">
       <image class="record-icon" mode="scaleToFill" src="/assets/vison-record.png"/>
-      <view class="record-title">视力记录<text>(8)</text></view>
+      <view class="record-title">视力记录<text>({{userEyeTestRecordNumber}})</text></view>
     </view>
   </view>
 </view>

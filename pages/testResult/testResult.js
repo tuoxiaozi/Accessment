@@ -1,4 +1,7 @@
 import { queryUserEyeTestReport } from '../../config/api'
+import env from '../../config/env'
+const imgbase = env.pic_url
+
 Page({
   data: {
     title: '',
@@ -11,7 +14,8 @@ Page({
     rightEye: '',
     astigmatismIsNormal: '',
     colorBlindIsNormal: '',
-    showModal: !1
+    showModal: !1,
+    imgbase
   },
   onLoad(t) {
     this.showRes(t)
@@ -61,6 +65,7 @@ Page({
             tip: t.res === '1' ? '恭喜您，您没有散光症状' : '您的疑似有散光症状，建议到专业机构检查',
             bgimg: t.res === '1' ? 'vision-normal' : 'vision-normal'
           })
+
           console.log(this.data.myopiaLeft,'+++++',this.data.myopiaRight)
           break
         // 散光结果

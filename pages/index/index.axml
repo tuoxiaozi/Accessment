@@ -41,7 +41,7 @@
     </view>
   </view>
   <view class="recommand-list">
-    <view class="list-item">
+    <view class="list-item" onTap="toMedical">
       <view class="list-content">
         <view class="test-title">中医体质智慧评估</view>
         <view a:if="{{false}}" class="test-price">17.2元</view>

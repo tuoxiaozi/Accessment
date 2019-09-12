@@ -1,4 +1,6 @@
 import { addEyeTestRecord } from '../../config/api'
+import env from '../../config/env'
+const imgbase = env.pic_url
 const n = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
 Page({
   data: {
@@ -10,7 +12,7 @@ Page({
     rightNum: 0,
     wrongNum: 0,
     value: 0, // 判定结果
-    testdata: [{ // 色盲数据
+    tempdata: [{ // 色盲数据
       url: "daltonismo1",
       num: 1
     }, {  // 色盲数据
@@ -38,26 +40,66 @@ Page({
       url: "daltonismo9",
       num: 9
     }],
+    //* tempdata: [],
+    count: 0,
+    imgbase
   },
   onLoad() {
-    this.initTest()
-    this.setData({
-      rightNum: 0,
-      wrongNum: 0
-    })
   },
   onShow() {
-    console.log('=========>app onShow<===============')
+    //const testdata = this.data.testdata
+    this.setData({
+      rightNum: 0,
+      wrongNum: 0,
+      count: 0,
+      tempdata: [{ // 色盲数据
+        url: "daltonismo1",
+        num: 1
+      }, {  // 色盲数据
+        url: "daltonismo2",
+        num: 2
+      }, {
+        url: "daltonismo3",
+        num: 3
+      }, {
+        url: "daltonismo4",
+        num: 4
+      }, {
+        url: "daltonismo5",
+        num: 5
+      }, {
+        url: "daltonismo6",
+        num: 6
+      }, {
+        url: "daltonismo7",
+        num: 7
+      }, {
+        url: "daltonismo8",
+        num: 8
+      }, {
+        url: "daltonismo9",
+        num: 9
+      }]
+    }),
+      this.initTest()
+    console.log(this.data.tempdata)
   },
   // 测视力初始化
   initTest() {
-    let t = Math.floor(this.data.testdata.length * Math.random())
-    const testdata = this.data.testdata
+    console.log(this.data.tempdata)
+    let t = Math.floor(this.data.tempdata.length * Math.random())
+    const tempdata = this.data.tempdata
+    console.log(tempdata[t])
     this.setData({
-      imgUrl: testdata[t].url,
-      imgNum: testdata[t].num
+      imgUrl: tempdata[t].url,
+      imgNum: tempdata[t].num,
+      count: this.data.count + 1
     })
-    console.log('当前数值', this.data.imgNum)
+    this.data.tempdata.splice(t, 1)
+    this.setData({
+      tempdata: this.data.tempdata
+    })
+    console.log('当前数组', this.data.tempdata)
   },
 
   // 绑定picker
@@ -98,18 +140,23 @@ Page({
 
   // 判定结果
   judgment() {
-    if (this.data.wrongNum >= 1) {
-      this.setData({
-        value: '0' // 疑似色盲
-      })
-      this._addEyeTestRecord()
-      console.log('检测结果： 疑似色盲')
-    } else if (this.data.rightNum >= 3) {
-      this.setData({
-        value: '1' // 正常
-      })
-      this._addEyeTestRecord()
-      console.log('检测结果： 正常')
+    console.log('=========>数组长度', this.data.testdata)
+    if (this.data.count >= 3) {
+      if (this.data.wrongNum >= 1) {
+        this.setData({
+          value: '0' // 疑似色盲
+        })
+        this._addEyeTestRecord()
+        console.log('检测结果： 疑似色盲')
+      } else if (this.data.rightNum >= 3) {
+        this.setData({
+          value: '1' // 正常
+        })
+        this._addEyeTestRecord()
+        console.log('检测结果： 正常')
+      }
+    } else {
+      this.initTest()
     }
   },
 

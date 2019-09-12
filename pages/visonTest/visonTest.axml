@@ -7,13 +7,13 @@
   </view>
   <view class="vision-test {{showRes=='2'?'isWrong':''}}">
     <view class="vision-test-wrapper">
-      <image src="/assets/E.png" style="width: {{imgWidth}}rpx;height: {{imgWidth}}rpx;transform:rotate({{imgDegree}}deg);"></image>
+      <image src="{{imgUrl}}" style="width: {{imgWidth}}rpx;height: {{imgWidth}}rpx;transform:rotate({{imgDegree}}deg);"></image>
     </view>
   </view>
   <view class="direction">
-    <button onTap="direction" class="up" data-dir="up">上</button>
-    <button onTap="direction" class="down" data-dir="down">下</button>
-    <button onTap="direction" class="left" data-dir="left">左</button>
-    <button onTap="direction" class="right" data-dir="right">右</button>
+    <view onTap="direction" class="up btn-active" data-dir="up"></view>
+    <view onTap="direction" class="down btn-active" data-dir="down"></view>
+    <view onTap="direction" class="left btn-active" data-dir="left"></view>
+    <view onTap="direction" class="right btn-active" data-dir="right"></view>
   </view>
 </view>

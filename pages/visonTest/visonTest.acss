@@ -1,7 +1,4 @@
 page {
-  width: 100%;
-  display: block;
-  padding-bottom: 45rpx;
   background: #F5F5F5;
 }
 
@@ -74,34 +71,46 @@ image {
   position: relative;
 }
 
-.direction button {
+.direction view {
   position: absolute;
   width: 100rpx;
   height: 100rpx;
-  background: #ccc;
   line-height: 100rpx;
+  background: url('/assets/dir-arrow.png') no-repeat;
+  background-size: 100rpx 100rpx;
+}
+.btn-active {
+  box-shadow: 0px 1px 8px 1px rgba(230, 239, 245, 0.72);
 }
 
 .up {
   left: 50%;
   right: 0;
   margin-left: -50rpx;
+  width: 100rpx;
+  height: 100rpx;
 }
 
 .down {
   top: 60%;
   left: 50%;
   margin-left: -50rpx;
+  transform: rotate(180deg);
+
 }
 
 .left {
   left: 30%;
   top: 30%;
+  transform: rotate(270deg);
+
 }
 
 .right {
   right: 30%;
   top: 30%;
+  transform: rotate(90deg);
+
 }
 
 button::after {

@@ -1,6 +1,6 @@
 <view class="page">
   <view class="tip-content">
-    <image class="bg-img" mode="scaleToFill" src="/assets/guide.png"/>
+    <image class="bg-img" mode="scaleToFill" src="{{imgUrl}}"/>
     <view class="tip-title">手机与眼睛相距50cm</view>
   </view>
   <view class="tip-text">请在屏幕往你看到的E字标开口方向点击方向按钮，系统会根据您的判断，自动生成检测结果</view>

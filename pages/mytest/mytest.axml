@@ -1,0 +1,20 @@
+<view class="myts">
+  <view class="swb">
+    <view class="sw">
+      <text a:for="{{['全部','未完成','已完成']}}" a:for-index='i' onTap="switchHomeTag" class="sec c9 tc {{nowTag==i?'act':''}}" data-tag={{i}}>{{item}}</text>
+    </view>
+    <view class="cur" style="left:{{leftPt}}%"></view>
+  </view>
+  <view class="mytsb">
+    <view class="mytsc" a:for="{{lists}}" a:for-item="t" onTap="toRepeat" data-state="{{t.state}}" data-conclusion="{{t.conclusion}}" data-conclusionTxt="{{t.conclusionTxt}}">
+      <view class="mytsl">
+        <view class="mytstl c3 fs38 fw500">{{t.name}}</view>
+        <view class="mytsti c9">{{t.modifyTime}}{{t.conclusion}}</view>
+      </view>
+      <view class="mytsr">
+        <view a:if="{{t.state === 1}}" class="btn tc cf" onTap="toRepeat">待完成</view>
+        <image a:if="{{t.state === 2}}"  class="bgimg" mode="scaleToFill" src="../../assets/status{{t.conclusion.split(',')[0]}}.png"/>
+      </view>
+    </view>
+  </view>
+</view>

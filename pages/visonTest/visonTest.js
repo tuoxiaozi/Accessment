@@ -1,7 +1,11 @@
 import { addEyeTestRecord } from '../../config/api'
+import env from '../../config/env'
+const imgbase = env.pic_url
+
 
 Page({
   data: {
+    imgUrl: imgbase + 'E.png',
     rightEye: "",  //右眼视力
     leftEye: "",    // 左眼视力
     isNormal: "0",  // 是否正常
@@ -112,7 +116,7 @@ Page({
           showRes: "",
         })
       }
-    }, 2e2)) : (this.setData({
+    }, 5e2)) : (this.setData({
       showRes: "2",// 回答错误
       wrongNums: this.data.wrongNums + 1
     }), setTimeout(() => {
@@ -159,7 +163,7 @@ Page({
           curDirection: this.data.testDirection[a].direction
         })
       }
-    }, 2e2))
+    }, 5e2))
   },
 
   async _addEyeTestRecord() {

@@ -2,8 +2,7 @@
   <view class="content-wrapper">
     <view class="title">通过选择您所看到的数字来测试您是否色盲</view>
     <view class="img-wrapper">
-      <image mode="scaleToFill" src="/assets/{{imgUrl}}.png"/>
-      <!-- <image mode="scaleToFill" src="/assets/daltonismo6.png"/> -->
+      <image mode="scaleToFill" src="{{imgbase+imgUrl}}.png"/>
     </view>
     <view class="tip">上下滑动选择图片中的数字</view>
   </view>

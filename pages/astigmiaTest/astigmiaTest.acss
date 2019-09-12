@@ -15,8 +15,8 @@
 }
 
 .test-img {
-  width: 528rpx;
-  height: 496rpx;
+  width: 456rpx;
+  height: 456rpx;
 }
 
 .form-wapper {

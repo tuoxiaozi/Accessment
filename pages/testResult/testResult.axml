@@ -1,6 +1,6 @@
 <view class="page">
   <view class="result-wrapper">
-    <image class="res-bg" mode="scaleToFill" src="/assets/{{bgimg}}.png"/>
+    <image class="res-bg" mode="scaleToFill" src="{{imgbase+bgimg}}.png"/>
     <view class="content-wrapper">
       <view a:if="{{type === '1' || type === '2'}}" class="result-title">{{title}}检测：</view>
       <view a:if="{{type === '1' || type === '2'}}">
@@ -28,8 +28,8 @@
   <view class="form-item">
     <view class="form-label">视力检测</view>
     <view a:if="{{true}}" class="form-content">
-      <view style="margin-right: 15px">左眼{{myopiaLeft}}</view>
-      <view>右眼{{myopiaRight}}</view>
+      <view style="margin-right: 15px">左眼{{myopiaLeft.toFixed(1)}}</view>
+      <view>右眼{{myopiaRight.toFixed(1)}}</view>
     </view>
     <view a:else class="form-content">未检测</view>
     <view class="arrow-wrapper"  a:if="{{void 0 === myopiaLeft}}">

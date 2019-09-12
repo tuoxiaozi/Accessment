@@ -1,21 +1,13 @@
+
 <view class="bg-wrapper">
-  <swiper indicator-dots="{{true}}">
-    <block a:for="{{wikiLst}}">
-      <swiper-item >
+  <swiper  current="{{current}}" onChange="swiperChange">
+      <swiper-item class="{{index==currentIndex?'active':''}}" a:for="{{wikiLst}}">
         <view class="swiper-wrapper">
-          <image class="swipper-img" mode="scaleToFill" src="/assets/{{item.pic}}.png"/>
+          <image class="swipper-img" mode="scaleToFill" src="{{imgbase +item.pic}}.png"/>
           <view class="title">{{item.title}}</view>
           <view class="content">{{item.content}}</view>
           <view/>
         </view>
       </swiper-item>
-    </block>
   </swiper>
-    <!-- <swiper  class="swiper" current="{{current}}" duration="{{duration}}" interval="{{interval}}" nextMargin="56rpx" previousMargin="56rpx">
-        <swiper-item class="{{index==currentIndex?'slide_item_active':''}}" wx:for="{{banner}}" wx:key="ad_id">
-            <view catchtap="skipAd" data-adid="{{item.ad_id}}" data-link="{{item.ad_link}}" data-manner="{{item.target}}">
-                <image class="swiper-image" lazyLoad="true" src="{{item.ad_code}}"></image>
-            </view>
-        </swiper-item>
-    </swiper> -->
 </view>

@@ -1,10 +1,15 @@
 import { queryMyAcctUserInfoAndPoint, queryUserEyeTestReport } from '../../config/api'
+import env from '../../config/env'
+
 Page({
   data: {
     myopiaLeft: '',
     myopiaRight: '',
     astigmatismIsNormal: '',
-    colorBlindIsNormal: ''
+    colorBlindIsNormal: '',
+    userSuveryRecordNumber: 0,
+    userEyeTestRecordNumber: 0
+
   },
   onLoad() { },
 
@@ -32,19 +37,21 @@ Page({
     let res = await queryUserEyeTestReport()
     console.log(res)
     if (res.data.code === 0) {
-      let { astigmatismIsNormal, colorBlindIsNormal, myopiaLeft, myopiaRight } = res.data.data
+      let { astigmatismIsNormal, colorBlindIsNormal, myopiaLeft, myopiaRight, userSuveryRecordNumber, userEyeTestRecordNumber } = res.data.data
       this.setData({
         astigmatismIsNormal: this.transformStr(astigmatismIsNormal),
         colorBlindIsNormal: this.transformStr(colorBlindIsNormal),
         myopiaLeft,
-        myopiaRight
+        myopiaRight,
+        userSuveryRecordNumber,
+        userEyeTestRecordNumber
       })
     }
   },
   // 测评记录
   accessRecord() {
     my.navigateTo({
-      url: "/pages/visonRecord/visonRecord"
+      url: "/pages/mytest/mytest"
     })
   },
 
@@ -60,7 +67,7 @@ Page({
     if (val !== 'undefined') {
       if (val === 1) {
         return '正常'
-      } else if(val === 0) {
+      } else if (val === 0) {
         return '疑似'
       }
     } else {

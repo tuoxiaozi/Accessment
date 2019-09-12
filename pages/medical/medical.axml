@@ -1,0 +1,79 @@
+<view class="ac">
+  <view class="ac-hd">
+    <image class="ac-hdpic" mode="scaleToFill" src="/assets/access_bg.jpg"/>
+    <view class="ac-hdban">
+      <text class="ac-hdbana">本评估依据
+        <text class="cf76 fs28">《中医体质分类判定标准》</text>实现，可以判断我国成年人的中医体质类型，方便您了解自身体质，养生调节。</text>
+    </view>
+  </view>
+  <view class="acc-box">
+    <view class="acc-bhd">
+      <text class="acc-bhdi fs38">本评估问卷共
+        <text class="acc-bhda">4大部分</text></text>
+    </view>
+    <view class="acc-bbd">
+      <image class="acc-bbd-imga" mode="scaleToFill" src="/assets/tcm_illustrations.png"/>
+    </view>
+  </view>
+  <view class="acc-box">
+    <view class="acc-bhd">
+      <text class="acc-bhdi fs38">评诊提示</text>
+    </view>
+    <view class="acc-bbd">
+      <view class="acc-li">
+        <text>中医体质是指人体生命过程中，在先天禀赋和后天获得的基础上所形成的形态结构、生理功能和心理状态方面综合的、相对稳定的固有特质。是人类在成长、生育过程中所形成的与自然、社会环境相适应的人体个性特征。</text>
+      </view>
+      <view class="acc-li">
+        <text>中医体质分为气虚、阳虚、阴虚、痰湿、湿热、血瘀、气郁、特禀8种偏颇体质和1种健康的平和体质。</text>
+      </view>
+      <view class="acc-li">
+        <text>请您根据最近一周内的生活实际情况，选择符合自己的答案，为自己的体质健康做一次初步评估。</text>
+      </view>
+    </view>
+  </view>
+  <view class="acc-box">
+    <view class="acc-bhd">
+      <text class="acc-bhdi fs38">评测结果案例</text>
+    </view>
+    <view class="acc-bbd">
+      <image class="acc-bbd-imgb" mode="scaleToFill" src="/assets/min.png"/>
+    </view>
+  </view>
+  <view class="paybtnw" a:if="{{isPay === 1}}">
+    <view class="paycont">
+      <text>暑期狂欢价：<text style="font-size:38rpx;">￥{{price}}</text></text>
+      <text class="payorig">原价：￥{{originalPrice}}</text>
+    </view>
+    <button size="default" type="primary" class="paybtn" onTap="onClickHandler" loading="{{ isPaying }}" disabled="{{ isPaying }}">立即支付</button>
+  </view>
+  <view class="paybtnw tc" onTap="startTest" a:else>
+    <text class="ml32 cf fs17 ">{{state === 0?'开始测评':'继续答题'}}<text>
+  </view>
+
+  <view class="selectView" a:if="{{showSele}}">
+    <form onSubmit="selectSex">
+      <view class="selectText">为了确保评选的准确性，请先选择您的性别</view>
+      <view>
+        <radio-group class="radio-group" onChange="radioChange" name="gender">
+          <label class="radio">
+            <radio value="1" checked="true"/>
+            <text class="radio-text">男</text>
+          </label>
+          <label class="radio">
+            <radio value="2"/>
+            <text class="radio-text">女</text>
+          </label>
+        </radio-group>
+      </view>
+      <view class="selectBut">
+        <view>
+          <button onTap="cancel">取消</button>
+        </view>
+        <view>
+          <button formType="submit">确定</button>
+        </view>
+      </view>
+    </form>
+  </view>
+  <view class="vdis" a:if="{{showSele}}" onTap="showSele"></view>
+</view>

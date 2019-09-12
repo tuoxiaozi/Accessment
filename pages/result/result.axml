@@ -1,0 +1,25 @@
+<view class="res">
+  <view class="res-hd">
+      <image class="res-icn" onTap="share" mode="scaleToFill" src="/assets/share.png"/>
+      <!-- <image class="hdpic" mode="scaleToFill" src="/assets/db.png"/> -->
+    <view class="res-hdbox">
+      <view class="res-avtar">
+        <view><image class="res-avatar-img" mode="scaleToFill" src="{{userMsg.headAddress ||'/assets/zy_default.png'}}"/></view>
+      </view>
+      <view class="res-tip c6 fs28">您现在的体质表现为</view>
+    </view>
+  </view>
+  
+  <!--  item=1 || item=10 -->
+  <view class="res-box" a:for="{{conclusions}}" a:for-index="idx">
+    <view class="res-til tc">{{conclusionTxts[idx]}}</view>
+    <view class="res-bg" a:for="{{resultLst[item]}}" a:for-item="itemName">
+      <view class="res-bgh c3e18">{{itemName.name}}</view>
+      <view class="bgb">{{itemName.value}}</view>
+    </view>
+  </view>
+
+
+
+    <button onTap="reTest" class="rest-btn c6">重新测评</button>
+</view>

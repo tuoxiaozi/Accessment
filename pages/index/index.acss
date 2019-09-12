@@ -1,7 +1,8 @@
 .home {}
 
-swipper {
+swiper {
   padding: 0 32rpx;
+  margin-top: 20rpx;
 }
 
 .home-swiper-item{
@@ -106,7 +107,6 @@ swipper {
   font-size: 34rpx;
   color: #333;
   overflow: hidden;
-  /*??? */
 }
 
 .test-price {

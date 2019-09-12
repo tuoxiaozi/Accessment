@@ -1,0 +1,41 @@
+<view class="ts bgf">
+  <view class="tsw">
+    <view class="tshd">
+      <view class="tssct fs34 c3" onTap="showSele">
+        {{secLst[curSec].name}}
+        <image a:if="{{showSele && curSecOri > 0}}" src="../../assets/zy_pressed.png" class="img"/> 
+        <image a:elif="{{curSecOri > 0}}" src="../../assets/zy_normal.png" class="img"/> 
+      </view>
+    </view>
+    <view a:if="{{showSele}}">
+      <view class="tssct fs34 c3 vsel" a:for="{{secLst}}" onTap="toSel" data-i="{{index}}">
+        <view a:if="{{curSecOri >= index}}" style="width: 80%">{{item.name}}</view>
+        <view a:else style="width: 80%; color:#CCCCCC;">{{item.name}}</view>
+        <view a:if="{{index === curSec}}">
+          <image a:if="{{showSele}}" src="../../assets/zy_selected.png" class="img"/> 
+        </view>
+      </view>
+    </view>
+    <view class="vdis" a:if="{{showSele}}" onTap="showSele"></view>
+    <view class="tsb">
+      <view class="tsli bgf {{testCount==ti?'sw':''}}" a:for="{{tsLst}}" a:for-index="ti" a:key="{{item.id}}">
+        <view class="tsspl">
+          <view class="tsna">
+            <text class="tstp fw500">
+              <text>({{testCount+1}}/{{tsLst.length}})</text>{{item.Q}}</text>
+          </view>
+          <view class="tsslb">
+            <view onTap="changeSimTest" class="tsck {{sele.isAct?'rd-act':'rd'}}" data-i="{{ti}}" data-j="{{jndex}}" data-queNo="{{ti+1}}" data-answerNo="{{jndex+1}}" hoverClass="rd-act" a:for="{{item.Select}}" a:for-index="jndex" a:for-item="sele" a:key="{{sele.id}}">
+              <text class="tscka">{{alps[jndex]}}</text>
+              {{sele.A}}
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <button  onTap="submitTest" class="qbtn cf" a:if="{{tsLst.length==testCount+1}}" disabled="{{disabled}}"> 保存</button>
+  <view class="pbtn c9 tc"  a:if="{{testCount!== 0}}">
+    <text onTap="prevQs">上一题</text>
+  </view>
+</view>

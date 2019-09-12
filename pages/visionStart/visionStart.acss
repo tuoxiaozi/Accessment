@@ -31,7 +31,7 @@
 }
 
 .tip-text {
-  margin-top: 24rpx;
+  margin-top: 150rpx;
   font-size: 28rpx;
   color: #666;
   line-height: 40rpx;

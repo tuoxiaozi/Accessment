@@ -1,7 +1,10 @@
 import { addEyeTestRecord } from '../../config/api'
+import env from '../../config/env'
 Page({
   data: {
-    value: '' // (1:正常,0:疑是散光)
+    value: '',// (1:正常,0:疑是散光)
+    astigmatism: env.pic_url + 'astigmatism.png',
+
   },
   onLoad() { },
   radiochange(e) {
