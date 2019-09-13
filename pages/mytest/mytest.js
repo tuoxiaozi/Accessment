@@ -42,7 +42,7 @@ Page({
     var e = t.currentTarget.dataset.tag,n = this
     e != n.data.nowTag && n.setData({
       nowTag: e,
-      leftPt: 25 * e
+      leftPt: 33.3 * e
     }), this.getReportLst(e)
   },
   // 获取的历史测评列表
