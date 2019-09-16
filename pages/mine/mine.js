@@ -21,12 +21,10 @@ Page({
   // 获取个人信息
   async _queryMyAcctUserInfoAndPoint() {
     let res = await queryMyAcctUserInfoAndPoint()
-    console.log('我的', res)
     if (res.data.code === 0) {
       this.setData({
         userMsg: res.data.data
       })
-      console.log('用户信息', this.data.userMsg)
     } else {
       console.log(res)
     }

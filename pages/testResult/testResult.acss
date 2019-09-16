@@ -67,6 +67,17 @@
   margin-top: 5rpx;
   font-size: 32rpx;
 }
+.vison-tip {
+  position: absolute;
+  left: 0;
+  bottom: 23rpx;
+  width: 100%;
+  text-align: center;
+  color: #fff;
+  line-height: 33rpx;
+  z-index: 666;
+  font-size: 24rpx;
+}
 
 .tip-icon {
   z-index: 666;

@@ -32,7 +32,7 @@ Page({
       pageNum: n.data.pages.page,
       pageSize: n.data.pages.size,
     }).then(s => {
-      console.log('--------->s', s.data.data.rows)
+      // console.log('--------->s', s.data.data.rows)
       if (my.hideLoading(), s.data && s.data.data.rows) {
         n.setData({
           lists: [...this.data.lists, ...s.data.data.rows],

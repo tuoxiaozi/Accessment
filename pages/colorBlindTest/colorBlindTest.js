@@ -84,16 +84,13 @@ Page({
       this.initTest()
     console.log(this.data.tempdata)
   },
-  // 测视力初始化
+  // 色盲测试初始化
   initTest() {
-    console.log(this.data.tempdata)
     let t = Math.floor(this.data.tempdata.length * Math.random())
     const tempdata = this.data.tempdata
-    console.log(tempdata[t])
     this.setData({
       imgUrl: tempdata[t].url,
       imgNum: tempdata[t].num,
-      count: this.data.count + 1
     })
     this.data.tempdata.splice(t, 1)
     this.setData({
@@ -114,7 +111,8 @@ Page({
   confirm() {
     if (this.data.seCurrentNumber == this.data.imgNum) { // 回答正确计数，跳下一题
       this.setData({
-        rightNum: this.data.rightNum + 1
+        rightNum: this.data.rightNum + 1,
+        count: this.data.count + 1
       })
       console.log('正确次数', this.data.rightNum)
       if (this.data.rightNum < 3) { // 正确次数小于3
@@ -124,23 +122,28 @@ Page({
       }
     } else { // 回答错误
       this.setData({
-        wrongNum: this.data.wrongNum + 1
+        wrongNum: this.data.wrongNum + 1,
+        count: this.data.count + 1
       })
+      console.log('错误次数', this.data.wrongNum)
     }
     this.judgment()
   },
 
   // 点击取消
   cancel() {
+    console.log('当前count', this.data.count)
     this.setData({
       wrongNum: this.data.wrongNum + 1,
+      count: this.data.count + 1
     })
     this.judgment()
+      console.log('错误次数', this.data.wrongNum)
+
   },
 
   // 判定结果
   judgment() {
-    console.log('=========>数组长度', this.data.testdata)
     if (this.data.count >= 3) {
       if (this.data.wrongNum >= 1) {
         this.setData({

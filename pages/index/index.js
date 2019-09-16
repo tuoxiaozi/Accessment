@@ -117,7 +117,7 @@ Page({
             appId
           })
           console.log(`${minpath}`)
-          console.log('===========>', appId)
+          // console.log('appid', appId)
           break
       }
     }

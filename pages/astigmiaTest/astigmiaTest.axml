@@ -4,14 +4,14 @@
     <image class="test-img" mode="scaleToFill" src="{{astigmatism}}"/>
     <view class="form-wapper">
       <radio-group onChange="radiochange">
-      <view class="form-item">
-        <view class="form-title">图中某线条黑而清晰</view>
-        <view class="form-checkbox"><radio color="#FD7A4F" value="0"/></view>
-      </view>
-      <view class="form-item">
-        <view class="form-title">图中各线条粗细均匀</view>
-        <view class="form-checkbox"><radio  color="#FD7A4F"  value="1"/></view>
-      </view>
+      <label name="0" class="form-item">
+        图中某线条黑而清晰
+        <view class="form-checkbox"><radio color="#FD7A4F" name="0" value="0"/></view>
+      </label>
+      <label name="1" class="form-item">
+        图中各线条粗细均匀
+        <view class="form-checkbox"><radio  color="#FD7A4F" name="1"  value="1"/></view>
+      </label>
       </radio-group>
     </view>
     <button class="submit-btn" onTap="submit">提交</button>

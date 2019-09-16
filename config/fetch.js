@@ -1,6 +1,6 @@
 const app = getApp();
 import api from './api.js'
-import env from './env.js'
+import env from './env'
 
 const request = (
     url = "",
@@ -17,9 +17,9 @@ const request = (
         headers['Authorization'] = token.data
         // headers['XWS-TOKEN'] = authInfo.data['XWS-TOKEN']
     }
-    // console.log(env.base_url_prod + url)
+
     my.request({
-        url: env.base_url_prod + url,
+        url: env.base_url_dev + url,
         data,
         method,
         headers,
@@ -28,8 +28,26 @@ const request = (
             if (res.data.status === 200){
               if (res.data.code === 40301) {
                 // console.log('backUrl',app.backUrl)
-                // my.redirectTo({ url: '/pages/auth/auth'})
-                my.navigateTo({ url: '/pages/auth/auth'})
+                my.redirectTo({ url: '/pages/auth/auth'})
+                // app.getUserInfo().then(
+                //   auth => {
+                //       console.log(auth)
+                //       let auth_code = auth.auth_code.authCode;
+                //       api.getTokenByCode({
+                //         appClient: '',
+                //         code: auth_code,
+                //         identityType: 1,
+                //         mac: '',
+                //         registePlat: 2
+                //       }).then(result =>{
+                //         console.log('index',result)
+                //         my.setStorage({
+                //           key: 'token',
+                //           data: result.data.data
+                //         });
+                //       })
+                //   }
+                // );
               } else{
                 resolve(res);
               }

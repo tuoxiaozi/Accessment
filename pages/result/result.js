@@ -33,7 +33,7 @@ Page({
   // 获取个人信息
   async _queryMyAcctUserInfoAndPoint() {
     let result = await queryMyAcctUserInfoAndPoint()
-    console.log('我的',result)
+    // console.log('我的',result)
     if(result.data.code === 0){
       this.setData({
         userMsg:result.data.data
@@ -47,7 +47,7 @@ Page({
   reTest() {
     my.redirectTo({
       // url: `/pages/result/result&id=${this.data.resId}`
-      url: `/pages/index/index`
+      url: `/pages/medical/medical`
     })
   },
   // tap分享

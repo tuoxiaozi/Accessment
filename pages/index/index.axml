@@ -1,4 +1,5 @@
 <view class="home">
+        <lifestyle publicId="2019060365483217" />
   <swiper indicator-color="#fff" indicator-active-color="#3CA0FF" indicator-dots="{{true}}" autoplay="{{true}}" interval="{{3000}}" circular="{{true}}">
     <block a:for="{{banner}}">
       <swiper-item>

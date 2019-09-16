@@ -21,7 +21,6 @@ Page({
       return !1
     }
     this._addEyeTestRecord()
-    console.log('提交成功', this.data.value)
   },
 
   async _addEyeTestRecord() {

@@ -2,7 +2,7 @@
   <view class="list-item" onTap="toMedical">
     <view class="list-content">
       <view class="test-title">中医体质智慧评估</view>
-      <view a:if="{{false}}" class="test-price">17.2元</view>
+      <view a:if="{{true}}" class="test-price">0.1元</view>
       <view a:else class="test-free">免费</view>
       <view class="test-nums">已测评：57万人</view>
     </view>

@@ -9,7 +9,6 @@ Page({
     rightEye: "",  //右眼视力
     leftEye: "",    // 左眼视力
     isNormal: "0",  // 是否正常
-    value: null,
     testdata: [{  // 视力数据
       sight: "1.0",
       size: "20"
@@ -63,15 +62,23 @@ Page({
   onLoad() {
     this.initTest()
   },
+  createRandomNum() {
+    let t =  Math.floor(4 * Math.random())
+    while( t === this.data.t) {
+       t = Math.floor(4 * Math.random())
+    }
+     return t
+  },
 
   // 测视力初始化
   initTest() {
-    let t = Math.floor(4 * Math.random());
+    let t = this.createRandomNum()
     this.setData({
       imgDegree: this.data.testDirection[t].degree,
       imgWidth: "20", // 初始视力1.0
-      curDirection: this.data.testDirection[t].direction
-    });
+      curDirection: this.data.testDirection[t].direction,
+      t // 记抽到的缩影，后续去重
+    })
   },
 
   // 方向判别
@@ -93,13 +100,14 @@ Page({
             // testindex: this.data.testdata.findIndex(e => e.sight == this.data.rightEye) // 左眼使用上一次的数据
             testindex: 0
           })
-          let n = Math.floor(4 * Math.random())
+          let t = this.createRandomNum()
           this.setData({ // 抽到随机
             imgWidth: this.data.testdata[this.data.testindex].size,
-            imgDegree: this.data.testDirection[n].degree,
-            curDirection: this.data.testDirection[n].direction,
+            imgDegree: this.data.testDirection[t].degree,
+            curDirection: this.data.testDirection[t].direction,
             rightNums: 0,
-            showRes: ""
+            showRes: "",
+            t 
           })
         } else { // 当前为左眼
           this.setData({
@@ -109,11 +117,12 @@ Page({
           this._addEyeTestRecord()
         }
       } else {  // 正确低于两个，继续切换
-        let n = Math.floor(4 * Math.random());
+        let t = this.createRandomNum()
         this.setData({
-          imgDegree: this.data.testDirection[n].degree,
-          curDirection: this.data.testDirection[n].direction,
+          imgDegree: this.data.testDirection[t].degree,
+          curDirection: this.data.testDirection[t].direction,
           showRes: "",
+          t
         })
       }
     }, 5e2)) : (this.setData({
@@ -131,36 +140,42 @@ Page({
               testindex: 0
             })
             console.log('=====>右眼视力', this.data.rightEye)
-            let a = Math.floor(4 * Math.random());
-            this.data.curDirection = this.data.testDirection[a].direction, this.setData({
+            let t = this.createRandomNum()
+            this.data.curDirection = this.data.testDirection[t].direction, this.setData({
               imgWidth: this.data.testdata[this.data.testindex].size,
-              imgDegree: this.data.testDirection[a].degree,
-              showRes: ""
-            }), this.data.wrongNums = 0;
+              imgDegree: this.data.testDirection[t].degree,
+              showRes: "",
+              wrongNums: 0,
+              t
+            })
           } else { // 当前为右眼
             this.data.leftEye = this.data.testdata[this.data.testindex].sight
             this._addEyeTestRecord()
           }
         } else { // 错误超过两个， 但少于7个
-          let a = Math.floor(4 * Math.random())
+          let t = this.createRandomNum()
           this.setData({
-            testindex: this.data.testindex + 1
+            testindex: this.data.testindex + 1,
+            wrongNums: 0,
+            rightNums:0,
+            t
           })
           console.log('索引', this.data.testindex)
           this.setData({
             imgWidth: this.data.testdata[this.data.testindex].size,
-            imgDegree: this.data.testDirection[a].degree,
-            curDirection: this.data.testDirection[a].direction,
+            imgDegree: this.data.testDirection[t].degree,
+            curDirection: this.data.testDirection[t].direction,
             wrongNums: 0,
             showRes: "",
           })
         }
       } else {
-        let a = Math.floor(4 * Math.random());
+        let t = this.createRandomNum()
         this.setData({
-          imgDegree: this.data.testDirection[a].degree,
+          imgDegree: this.data.testDirection[t].degree,
           showRes: "",
-          curDirection: this.data.testDirection[a].direction
+          curDirection: this.data.testDirection[t].direction,
+          t
         })
       }
     }, 5e2))
@@ -182,10 +197,8 @@ Page({
   // 页面跳转
   navtoRes() {
     this.jugmentIsNormal()
-    this.setData({
-      value: this.data.isNormal
-    }),
-    my.redirectTo({ url: '/pages/testResult/testResult?type=0&res=' + this.data.isNormal+'&left='+this.data.leftEye+'&right='+this.data.rightEye })
+    console.log('====>是否正常',this.data.isNormal)
+    my.redirectTo({ url: '/pages/testResult/testResult?type=0&res=' + this.data.isNormal+'&left='+this.data.leftEye+'&right='+this.data.rightEye})
   },
 
   // 判断是否正常
@@ -201,5 +214,7 @@ Page({
         isNormal: '0'
       })
     }
+    console.log('是否正常',+this.data.isNormal?'正常': '不正常')
+    console.log(this.data.isNormal)
   }
 })

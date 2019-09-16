@@ -35,7 +35,6 @@ Page({
         myopiaRight
       })
     }
-    console.log(this.data.astigmatismIsNormal)
   },
   // 处理字符串
   transformStr(val) {
@@ -51,7 +50,7 @@ Page({
   },
   // 展示结果
   showRes(t) {
-    console.log('接收的值=>', JSON.stringify(t))
+    // console.log('接收的值=>', JSON.stringify(t))
     if (typeof t.type !== 'undefined' && typeof t.res !== 'undefined') {
       this.setData({ type: t.type })
       switch (t.type) {
@@ -61,12 +60,9 @@ Page({
           this.setData({
             leftEye: t.left,
             rightEye: t.right,
-            res: t.res === '1' ? '正常' : '疑似散光',
-            tip: t.res === '1' ? '恭喜您，您没有散光症状' : '您的疑似有散光症状，建议到专业机构检查',
-            bgimg: t.res === '1' ? 'vision-normal' : 'vision-normal'
+            tip: t.res === '1' ? '您的视力良好，继续保持哦' : '您的视力不理想，建议您改正用眼习惯，多吃水果和蔬菜',
+            bgimg: t.res === '1' ? 'vision-normal' : 'vision-suspected'
           })
-
-          console.log(this.data.myopiaLeft,'+++++',this.data.myopiaRight)
           break
         // 散光结果
         case '1':
@@ -99,17 +95,17 @@ Page({
     console.log('type', type)
     switch (type) {
       case '0': //视力检测
-        my.redirectTo({
-          url: "/pages/visonTest/visonTest"
+        my.navigateTo({
+          url: "/pages/visonStart/visonStart"
         })
         break
       case '1': // 散光检测
-        my.redirectTo({
+        my.navigateTo({
           url: "/pages/astigmiaTest/astigmiaTest"
         })
         break
       case '2': // 色盲检测
-        my.redirectTo({
+        my.navigateTo({
           url: "/pages/colorBlindTest/colorBlindTest"
         })
         break
@@ -124,7 +120,7 @@ Page({
 
   // 跳转护眼百科
   toWiki() {
-    my.redirectTo({
+    my.navigateTo({
       url: "/pages/wikipedia/wikipedia"
     })
   },
