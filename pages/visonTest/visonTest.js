@@ -92,13 +92,17 @@ Page({
         if ("right" == this.data.eitherEye) { // 当前为右眼， 测左眼
           this.setData({
             rightEye: this.data.testdata[this.data.testindex].sight,
-            eitherEye: "left"
+            eitherEye: "left",
+            rightNums: 0,
+            wrongNums: 0,
+            leftEye:0
           })
           console.log('=====>右眼视力', this.data.rightEye)
           this.setData({ // 开始测左眼
             isRight: !1,
             // testindex: this.data.testdata.findIndex(e => e.sight == this.data.rightEye) // 左眼使用上一次的数据
-            testindex: 0
+            testindex: 0,
+            rightNums: 0
           })
           let t = this.createRandomNum()
           this.setData({ // 抽到随机
@@ -106,6 +110,7 @@ Page({
             imgDegree: this.data.testDirection[t].degree,
             curDirection: this.data.testDirection[t].direction,
             rightNums: 0,
+            wrongNums: 0,
             showRes: "",
             t 
           })
@@ -137,7 +142,9 @@ Page({
               rightEye: this.data.testdata[this.data.testindex].sight,
               eitherEye: 'left',
               isRight: !0,
-              testindex: 0
+              testindex: 0,
+              wrongNums: 0,
+              rightNums: 0
             })
             console.log('=====>右眼视力', this.data.rightEye)
             let t = this.createRandomNum()
@@ -145,6 +152,7 @@ Page({
               imgWidth: this.data.testdata[this.data.testindex].size,
               imgDegree: this.data.testDirection[t].degree,
               showRes: "",
+              rightNums: 0,
               wrongNums: 0,
               t
             })

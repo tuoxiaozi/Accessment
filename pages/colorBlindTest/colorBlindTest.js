@@ -42,7 +42,8 @@ Page({
     }],
     //* tempdata: [],
     count: 0,
-    imgbase
+    imgbase,
+    i: 0
   },
   onLoad() {
   },
@@ -87,6 +88,8 @@ Page({
   // 色盲测试初始化
   initTest() {
     let t = Math.floor(this.data.tempdata.length * Math.random())
+    this.setData({i: this.data.i+1})
+    console.log(`第${this.data.i}次执行`)
     const tempdata = this.data.tempdata
     this.setData({
       imgUrl: tempdata[t].url,

@@ -28,11 +28,11 @@
   </view>
   <view class="form-item">
     <view class="form-label">视力检测</view>
-    <view a:if="{{true}}" class="form-content">
+    <view a:if="{{void 0  !== myopiaLeft}}" class="form-content">
       <view style="margin-right: 15px">左眼{{myopiaLeft.toFixed(1)}}</view>
       <view>右眼{{myopiaRight.toFixed(1)}}</view>
     </view>
-    <view a:else class="form-content">未检测</view>
+    <view a:else class="form-tip">未检测</view>
     <view class="arrow-wrapper"  a:if="{{void 0 === myopiaLeft}}">
       <image class="form-arrow" onTap="reTest" data-type="0" src="/assets/jump.png"/>
     </view>
@@ -42,7 +42,7 @@
   <view class="form-item">
     <view class="form-label">散光检测</view>
     <view a:if="{{void 0 !== astigmatismIsNormal}}" class="form-content">{{astigmatismIsNormal}}</view>
-    <view  a:else  class="form-content">未检测</view>
+    <view  a:else  class="form-tip">未检测</view>
     <view class="arrow-wrapper" a:if="{{void 0 === astigmatismIsNormal}}">
       <image class="form-arrow" onTap="reTest"  data-type="1" src="/assets/jump.png"/>
     </view>
@@ -52,7 +52,7 @@
   <view class="form-item">
     <view class="form-label">色盲检测</view>
     <view a:if="{{astigmatismIsNormal !=='undefined'}}" class="form-content">{{colorBlindIsNormal}}</view>
-    <view a:else class="form-content">未检测</view>
+    <view a:else class="form-tip">未检测</view>
     <view class="arrow-wrapper" a:if="{{void 0 === colorBlindIsNormal}}">
       <image onTap="reTest" class="form-arrow" data-type="2" src="/assets/jump.png"/>
     </view>
@@ -66,7 +66,6 @@
         <view class="content-text">
           <text>300度以下属于轻度近视</text>
           <text>300-600度以下属于中度近视</text>
-          <text>300度以下属于轻度近视</text>
           <text>600度以上属于重度近视</text>
         </view>
         <view class="content-title">视力表对应近视度数参考：</view>
@@ -79,8 +78,8 @@
             <view class="text2">0.12=550-600度</view>
           </view>
           <view class="degrees-item2">
-            <view class="text1"0.6=150度></view>
-            <view class="text2"0.4=250度></view>
+            <view class="text1">0.6=150度</view>
+            <view class="text2">0.4=250度</view>
             <view class="text2">0.25=400度</view>
             <view class="text2">0.15=500度</view>
             <view class="text2">0.1=650度</view>

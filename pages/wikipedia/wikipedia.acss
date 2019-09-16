@@ -15,7 +15,7 @@ page {
 }
 
 swiper {
-  margin: 128rpx 52rpx 0;
+  margin:  78rpx 52rpx 0;
   width: calc(100% -52rpx);
   height: 988rpx;
   border-radius: 8rpx;
@@ -23,7 +23,7 @@ swiper {
 
 .swiper-wrapper {
   width: 646rpx;
-  height: 988rpx;
+  height: 1080rpx;
   background: #fff;
   border-radius: 8rpx;
   transform: scale(.9);

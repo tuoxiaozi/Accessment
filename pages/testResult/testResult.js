@@ -95,17 +95,17 @@ Page({
     console.log('type', type)
     switch (type) {
       case '0': //视力检测
-        my.navigateTo({
-          url: "/pages/visonStart/visonStart"
+        my.redirectTo({
+          url: "/pages/visionStart/visionStart"
         })
         break
       case '1': // 散光检测
-        my.navigateTo({
+        my.redirectTo({
           url: "/pages/astigmiaTest/astigmiaTest"
         })
         break
       case '2': // 色盲检测
-        my.navigateTo({
+        my.redirectTo({
           url: "/pages/colorBlindTest/colorBlindTest"
         })
         break

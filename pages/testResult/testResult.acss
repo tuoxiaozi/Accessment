@@ -137,7 +137,10 @@
   display: flex;
   color: #F4801B;
 }
-
+.form-tip {
+  display: flex;
+  color: #ccc;
+}
 .arrow-wrapper {
   width: 104rpx;
 }
@@ -196,10 +199,12 @@
 .content-title {
   display: block;
   color: #2F89F2;
-  line-height: 38px;
+  line-height: 38rpx;
+  font-size: 28rpx
 }
 
 .content-text {
+  margin-top: 26rpx;
   margin-bottom: 22rpx;
 }
 
@@ -213,6 +218,8 @@
 
 .degree-wrapper {
   display: flex;
+  margin-top: 22rpx;
+  margin-bottom:490rpx;
 }
 
 .text1, .text2 {

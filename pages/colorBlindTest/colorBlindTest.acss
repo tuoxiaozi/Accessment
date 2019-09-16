@@ -28,7 +28,7 @@
 .button-wrapper {
   display: flex;
   justify-content: space-between;
-  margin: 50rpx 77rpx 0;
+  margin: 50rpx 77rpx 28rpx;
 }
 
 .tip {
