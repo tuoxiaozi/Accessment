@@ -1,6 +1,6 @@
 
 <view class="bg-wrapper">
-  <swiper  current="{{current}}" onChange="swiperChange">
+  <swiper  current="{{current}}" onChange="swiperChange" indicator-dots="true">
       <swiper-item class="{{index==currentIndex?'active':''}}" a:for="{{wikiLst}}">
         <view class="swiper-wrapper">
           <image class="swipper-img" mode="scaleToFill" src="{{imgbase +item.pic}}.png"/>

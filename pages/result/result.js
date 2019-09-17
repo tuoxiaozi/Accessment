@@ -24,6 +24,7 @@ Page({
       conclusionTxts: conclusionTxt.split("、"),
       resultLst: resultLst
     })
+    // console.log('conclusions----------->',this.data.conclusions,'conclusionTxts--------->',this.data.conclusionTxts,'resultLst----->',this.data.resultLst)
   },
 
   onShow() {

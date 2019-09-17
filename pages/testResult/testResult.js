@@ -50,7 +50,6 @@ Page({
   },
   // 展示结果
   showRes(t) {
-    // console.log('接收的值=>', JSON.stringify(t))
     if (typeof t.type !== 'undefined' && typeof t.res !== 'undefined') {
       this.setData({ type: t.type })
       switch (t.type) {

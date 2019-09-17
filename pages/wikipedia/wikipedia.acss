@@ -15,9 +15,10 @@ page {
 }
 
 swiper {
-  margin:  78rpx 52rpx 0;
+  margin: 63rpx 52rpx 63rpx;
   width: calc(100% -52rpx);
   height: 988rpx;
+  width: 646rpx;
   border-radius: 8rpx;
 }
 

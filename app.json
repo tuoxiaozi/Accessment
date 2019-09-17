@@ -3,7 +3,6 @@
     "pages/index/index",
     "pages/wikipedia/wikipedia",
     "pages/visonRecord/visonRecord",
-    "pages/testResult/testResult",
     "pages/colorBlindTest/colorBlindTest",
     "pages/astigmiaTest/astigmiaTest",
     "pages/visonTest/visonTest",
@@ -12,8 +11,8 @@
     "pages/health/health",
     "pages/auth/auth",
     "pages/medical/medical",
-    "pages/mytest/mytest",
     "pages/result/result",
+    "pages/mytest/mytest",
     "pages/test/test"
     ],
   "window": {
