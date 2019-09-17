@@ -12,7 +12,7 @@
         <view class="mytsti c9">{{t.modifyTime}}{{t.conclusion}}</view>
       </view>
       <view class="mytsr">
-        <view a:if="{{t.state === 1}}" class="btn tc cf" onTap="toRepeat">待完成</view>
+        <view a:if="{{t.state === 1}}" class="btn tc cf" onTap="toRepeat" data-state="1">待完成</view>
         <image a:if="{{t.state === 2}}"  class="bgimg" mode="scaleToFill" src="../../assets/status{{t.conclusion.split(',')[0]}}.png"/>
       </view>
     </view>

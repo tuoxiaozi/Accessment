@@ -1,14 +1,16 @@
 const app = getApp()
-import { getTokenByCode, getAlipayTradeCreate, queryUserTcdPositionFlagUsingGET, queryUserTcdPositionFlag, savePayCallBack } from '/config/api'
+import { getTokenByCode, getAlipayTradeCreate, queryUserTcdPositionFlagUsingGET, queryUserTcdPositionFlag, savePayCallBack, queryUserSuvTcdAnswerDetail } from '/config/api'
 Page({
   data: {
     isPaying: false, //支付状态
     isPay: 0, // 是否支付
     state: 0, // 是否测评
-    gender: 0, // 性别 1 男 2 女
-    showSele: false,
+    gender: void 0, // 性别 1 男 2 女
+    showSele: !1,
+    reportId: null, // 用户答题id
+    curSec: 0 // 测评完成进度
   },
-  onLoad() {},
+  onLoad() { },
   onShow() {
     // app.getUserInfo();
     // let t = new Date().getTime();
@@ -16,37 +18,52 @@ Page({
     // if (flagT) {
     //   return !1
     // } else {
-      // this.auth()
+    // this.auth()
     // }
+    let that = this
     this.setData({
       isPaying: false, //支付状态
       isPay: 0, // 是否支付
       state: 0, // 是否测评
-      gender: 0, // 性别 1 男 2 女
-      showSele: false,
+      gender: void 0, // 性别 1 男 2 女
+      showSele: !1,
+      reportId: null, // 用户答题id
     })
     queryUserTcdPositionFlag({
       instanceCode: 'zytcpg'
     }).then(result => {
       if (result.data.code === 0) {
+        console.log(result.data)
         // 开发调试隐藏
         this.setData({
           isPay: result.data.data.isNeedPay,
           state: result.data.data.userEvaluationState,
           originalPrice: result.data.data.originalPrice,
-          price: result.data.data.price
-        });
+          price: result.data.data.price,
+          gender: result.data.data.gender,
+          reportId: result.data.data.reportId,
+        }),
+          queryUserSuvTcdAnswerDetail({
+            reportId: this.data.reportId
+          }).then(result => {
+            let data = result.data.data
+              this.setData({
+                curSec: data.positionFlag,
+                state: data.positionFlag
+              })
+          })
       }
     })
   },
   startTest() {
-    if(this.data.gender === 0) {
+    console.log(this.data.gender)
+    if (void 0 === this.data.gender) {
       this.setData({
-        showSele: true
+        showSele: !0
       })
     } else {
       my.navigateTo({
-        url: "/pages/test/test"
+        url: "/pages/test/test?curSec=" + this.data.curSec +"&state="+this.data.state
       });
     }
   },
@@ -77,7 +94,7 @@ Page({
                 // 开发调试隐藏
                 this.setData({
                   isPay: result.data.data.isNeedPay,
-                  state: result.data.data.userEvaluationState
+                  state: result.data.data.userEvaluationState,
                 });
               }
             })
@@ -100,14 +117,14 @@ Page({
 
       const trade = await this.getTradeNo();
       const tradeNo = trade.tradeNo;
-      
+
       const payStatus = await this.cashPaymentTrade(tradeNo);
       // const  payStatus = 'callbackUrl: "", extendInfo: {…}, memo: "", result: "app_name="alipay"&trade_no="2019082222001447000501…appid=alipay^version=10.1.70.8308"&success="true"", resultCode: "9000"}';
       console.log('111');
       this.updatePaymentListByTradeNo(tradeNo, payStatus);
       console.log(payStatus);
 
-      if(payStatus.status){
+      if (payStatus.status) {
         this.setData({
           isPaying: false,
           isPay: 0,
@@ -202,19 +219,19 @@ Page({
   },
 
   updatePaymentListByTradeNo(tradeNo, payStatus) {
-      savePayCallBack({
-        tradeNo: tradeNo,
-        payResultStatus: payStatus.resultCode === '9000'?'1':'0',
-        massge: payStatus.massge,
-        alipayTradeResult: payStatus.result
-      }).then(result => {
-        if (result.data.code === 0 || result.data.code === 710004) {
+    savePayCallBack({
+      tradeNo: tradeNo,
+      payResultStatus: payStatus.resultCode === '9000' ? '1' : '0',
+      massge: payStatus.massge,
+      alipayTradeResult: payStatus.result
+    }).then(result => {
+      if (result.data.code === 0 || result.data.code === 710004) {
         // if (result.data.code === 0 || result.data.code === 710007) {
-          console.log('更新支付成功')
-        } else {
-          console.log('更新支付失败')
-        }
-      })
+        console.log('更新支付成功')
+      } else {
+        console.log('更新支付失败')
+      }
+    })
   },
 
   selectSex(e) {
@@ -222,13 +239,13 @@ Page({
       url: "/pages/test/test?gender=" + e.detail.value.gender
     });
     this.setData({
-      showSele: false
+      showSele: !1
     })
   },
 
-  cancel(){
+  cancel() {
     this.setData({
-      showSele: false
+      showSele: !1
     })
   }
 

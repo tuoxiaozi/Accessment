@@ -18,13 +18,15 @@ Page({
     showSele: false,
     disabled: true,
   },
-  onLoad(options) {
-    const gender = options.gender
+  onLoad(opt) {
+    console.log('====>携带参数',opt)
+    const {gender, curSec, state} = opt
     if(gender){
       this.setData({
         gender
       })
     }
+   state && this.setData({curSec: +curSec})
 
     let c = this.data.curSec
     this.initTest(c)

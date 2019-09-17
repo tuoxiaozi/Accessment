@@ -83,12 +83,13 @@ Page({
   },
 
   toRepeat(e){
-    var data = e.currentTarget.dataset;
-    if(data.state === 1){
+    const data = e.currentTarget.dataset;
+    if(data.state === '1'){
       my.redirectTo({
-        url: `/pages/index/index`
+        url: `/pages/medical/medical`
       })
     }else {
+      console.log(data)
       my.redirectTo({
         url: `/pages/result/result?conclusion=` + data.conclusion + `&conclusionTxt=` + data.conclusionTxt
       })

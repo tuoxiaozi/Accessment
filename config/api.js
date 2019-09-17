@@ -5,6 +5,7 @@ const api = {
   /* 中医测评相关接口 */
   getTokenByCode,
   queryUserTcdPositionFlag,
+  queryUserSuvTcdAnswerDetail,
   getAlipayTradeCreate,
   savePayCallBack,
   saveData,
@@ -51,6 +52,11 @@ function queryMyAcctUserInfoAndPoint(params) {
 // 判断状态接口
 function queryUserTcdPositionFlag(params) {
   return fetchData('/quesans/suvTcd/queryUserTcdPositionFlag', params, 'get')
+}
+
+// 查询用户中医体质测评答题记录及结果
+function queryUserSuvTcdAnswerDetail(params) {
+  return fetchData('/quesans/suvTcd/queryUserSuvTcdAnswerDetail', params,'get')
 }
 
 // 下单接口
