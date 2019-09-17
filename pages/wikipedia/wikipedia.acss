@@ -24,7 +24,7 @@ swiper {
 
 .swiper-wrapper {
   width: 646rpx;
-  height: 1080rpx;
+  height: 1000rpx;
   background: #fff;
   border-radius: 8rpx;
   transform: scale(.9);

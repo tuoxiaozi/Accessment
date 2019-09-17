@@ -130,7 +130,7 @@ Page({
           t
         })
       }
-    }, 5e2)) : (this.setData({
+    }, 2e2)) : (this.setData({
       showRes: "2",// 回答错误
       wrongNums: this.data.wrongNums + 1
     }), setTimeout(() => {
@@ -186,7 +186,7 @@ Page({
           t
         })
       }
-    }, 5e2))
+    }, 2e2))
   },
 
   async _addEyeTestRecord() {
