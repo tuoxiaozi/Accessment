@@ -31,8 +31,10 @@ Page({
     })
     if (!res.data.code && res.data.data) {
       my.hideLoading()
-      const list = res.data.data
-      console.log(list)
+      const list = res.data.data.suvGroupList
+     if (list.length === 1) {
+        
+     }
     }
   },
 
