@@ -13,7 +13,7 @@
   <!--  item=1 || item=10 -->
   <view class="res-box" a:for="{{conclusions}}" a:for-index="idx">
     <view class="res-til tc">{{conclusionTxts[idx]}}</view>
-    <view class="res-bg" a:for="{{resultLst[item]}}" a:for-item="itemName">
+    <view class="res-bg" a:for="{{resultLst[item-1]}}" a:for-item="itemName">
       <view class="res-bgh c3e18">{{itemName.name}}</view>
       <view class="bgb">{{itemName.value}}</view>
     </view>
