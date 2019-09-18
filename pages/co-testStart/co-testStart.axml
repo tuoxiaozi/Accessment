@@ -1,0 +1,7 @@
+<view class="page">
+  <image class="header-img" mode="scaleToFill" src="{{}}"/>
+  <view class="content-wrapper">
+    <view class="content">{{}} </view>
+  </view>
+  <view class="btn" onTap="start">开始测评</view>
+</view>

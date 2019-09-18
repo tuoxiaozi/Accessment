@@ -1,4 +1,4 @@
-import {getmeCategory} from '../../config/api'
+import { getmeCategory,querySuvInstancePage } from '../../config/api'
 import env from '../../config/env'
 
 
@@ -7,11 +7,13 @@ Page({
     banner: [
       // '/assets/banner.png',
       '/assets/banner.png'
-    ]
+    ],
+    list: []
   },
   onLoad(query) {
     // 页面加载
     this._getCategory()
+    this._querySuvInstancePage()
   },
 
   onReachBottom() {
@@ -65,7 +67,7 @@ Page({
   // to中醫測評
   toMedical() {
     my.navigateTo({
-      url:"/pages/medical/medical"
+      url: "/pages/medical/medical"
     })
   },
 
@@ -83,15 +85,10 @@ Page({
   // 点击轮播图跳转
   goToLinkPage(e) {
     console.log(e);
-    let indx = e.currentTarget.dataset.index
-    // let t = new Date().getTime();
-    // let flagT = app.authIsOrNot(t);
-    // if (flagT) {
-      this.categoryJump(indx)
-    // } else {
-    //   this.auth(8, indx)
-    // }
+    const indx = e.currentTarget.dataset.index
+    this.categoryJump(indx)
   },
+
   categoryJump(idx) {
     const cat = this.data.category, n = this
     if (cat[idx].isJump === 'Y') {
@@ -122,4 +119,33 @@ Page({
       }
     }
   },
+
+  // 首页问卷分页查询
+  async _querySuvInstancePage () {
+    my.showLoading()
+    let res = await querySuvInstancePage({
+      pageNum: 1,
+      pageSize: 3
+    })
+    if (!res.data.code && res.data.data) {
+      my.hideLoading()
+      const list = res.data.data.rows
+      this.setData({list})
+      console.log(this.data.list)
+    } else {
+      my.hideLoading()
+      my.showToast({
+        content: res.data.message
+      })
+    }
+  },
+  toWelcome (e) {
+    const {code, type} = e.target.dataset
+    type? my.navigateTo({
+      url: `/pages/medical/medical`
+    })
+    : my.navigateTo({
+      url: `/pages/co-testStart/co-testStart?code=${code}&type=${type}`
+    })
+  }
 });

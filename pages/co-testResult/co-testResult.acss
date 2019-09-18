@@ -1,0 +1,112 @@
+.page {
+  background: #F5F4F9;
+  padding-top: 32rpx;
+  height: calc(100vh - 32rpx);
+}
+
+.result-box {
+  margin: 0 32rpx 0;
+  height: 565rpx;
+  background: #fff;
+  border-radius: 4rpx;
+}
+
+.title {
+  line-height: 100rpx;
+  text-align: center;
+  background: #FF851A;
+  color: #fff;
+  text-align: center;
+}
+
+.content {
+  padding: 46rpx 39rpx 48rpx 34rpx;
+}
+
+.text-title {
+  padding-bottom: 53rpx;
+  color: #333
+}
+
+.text-score {
+  padding-bottom: 32rpx;
+  line-height: 40rpx;
+  font-size: 28rpx;
+  color: #666;
+}
+
+.text-score text {
+  color: #F4801B;
+  font-size: 46rpx;
+  font-weight: 700;
+}
+
+.text-desc {
+  color: #666;
+  line-height: 48rpx;
+  font-size: 28rpx;
+}
+
+.btn {
+  position: absolute;
+  bottom: 48rpx;
+  left: 32rpx;
+  right: 32rpx;
+  line-height: 80rpx;
+  text-align: center;
+  background: linear-gradient(90deg, rgba(78, 168, 255, 1) 0%, rgba(66, 150, 255, 1) 100%);
+  color: #fff;
+}
+
+.modal-wrapper {
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, .6);
+  z-index: 999;
+}
+
+.modal {
+  position: relative;
+  margin: 539rpx  105rpx 0;
+  background: #fff;
+  width: 540rpx;
+  height: 219rpx;
+  border-radius: 4rpx;
+}
+
+.modal-content {
+  padding: 48rpx 32rpx 33rpx;
+  text-align: center;
+  border-bottom: 1rpx solid #ddd;
+}
+
+.modal-footer {
+  display: flex;
+  line-height: 100rpx
+}
+
+.modal-btn {
+  flex: 1;
+  text-align: center;
+  color: #999;
+  font-size: 36rpx;
+}
+.collect {
+  color: #108EE9;
+  font-weight: 500;
+}
+.modal-btn:after {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  content: '';
+  width: 2rpx;
+  height: 98rpx;
+  background: #ddd;
+}
