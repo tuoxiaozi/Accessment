@@ -17,7 +17,8 @@ const api = {
   getmeCategory,
   querySuvInstancePage,
   querySuvInstanceByCode,  
-  querySuvGroupQuestionAnswers
+  querySuvGroupQuestionAnswers,
+  saveQuestionAndAnswers
 };
 
 //获取token
@@ -58,9 +59,14 @@ function querySuvInstanceByCode(params) {
 function querySuvGroupQuestionAnswers(params) {
   return fetchData('/quesans/suvQuestion/querySuvGroupQuestionAnswers', params)
 }
+
+// 保存健康测评答案
+function saveQuestionAndAnswers(params) {
+  return fetchData('/quesans/suvUserReport/saveData', params, 'post')
+}
 /* ----------中医测评---------- */
 
-//测评结果页面 获取个人信息
+// 测评结果页面 获取个人信息
 function queryMyAcctUserInfoAndPoint(params) {
   return fetchData('/acct/accUser/acctUserInfo/queryMyAcctUserInfoAndPoint', params);
 }
@@ -92,6 +98,7 @@ function saveData(params) {
 
 // 分页查询我的测评记录列表
 function queryMyReportListPage(params) {
-  return fetchData('/quesans/suvTcd/queryMyReportListPage', params)
+  return fetchData('/quesans/suvUserReport/queryMyReportListPage', params)
 }
+
 export default api

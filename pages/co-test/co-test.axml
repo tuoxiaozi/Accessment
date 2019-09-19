@@ -13,7 +13,7 @@
         <view class="tsspl">
           <view class="tsna fw700">{{item.title}}</view>
           <view class="tsslb">
-            <view onTap="changeSimTest" class="tsck {{sele.isAct?'rd-act':'rd'}}" data-i="{{ti}}" data-j="{{jndex}}" data-queNo="{{item.queNo}}" data-answerNo="{{sele.answerNo}}" hoverClass="rd-act" a:for="{{item.answerList}}" a:for-index="jndex" a:for-item="sele" a:key="{{sele.id}}">
+            <view onTap="changeSimTest" class="tsck {{sele.isAct?'rd-act':'rd'}}" data-i="{{ti}}" data-j="{{jndex}}" data-questionId="{{item.questionId}}" data-answerId="{{sele.answerId}}" hoverClass="rd-act" a:for="{{item.answerList}}" a:for-index="jndex" a:for-item="sele" a:key="{{sele.id}}">
              <text>{{sele.answer}}</text>
             </view>
           </view>

@@ -1,5 +1,5 @@
 import { tsLst, secLst, alps } from '/mock/data.js'
-import { saveData, querySuvGroupQuestionAnswers } from '/config/api.js'
+import { saveQuestionAndAnswers, querySuvGroupQuestionAnswers } from '/config/api.js'
 import env from '../../config/env'
 
 Page({
@@ -53,9 +53,19 @@ Page({
   // 点击答案
   changeSimTest(t) {
     const e = t.currentTarget.dataset, n = this, asLst = this.data.asLst
-    const { i, j, ...o } = e
-    asLst[i] = o
-    n.setData({ asLst })
+    const { i, j, answerId, questionId } = e
+    console.log('类型', typeof answerId)
+    console.log(e)
+    asLst[i] = {
+      "answerRecordList": [
+        {
+          "answerId": answerId
+        }
+      ],
+
+      "questionId": questionId
+    },
+      n.setData({ asLst })
     n.nextQs(e.i, e)
     if (this.data.tsLst.length === e.i + 1 || this.data.asLst.length === this.data.tsLst.length) {
       this.setData({
@@ -100,21 +110,19 @@ Page({
     my.showLoading({
       content: "正在保存...",
     })
-    saveData({
+    saveQuestionAndAnswers({
       instanceCode: this.data.instanceCode,
       saveGroupCode: this.data.groupCode,
       replyRecordList: this.data.asLst // 答案
     }).then(t => {
-      console.log(t);
+      console.log(t)
       if (t.data.code === 0) {
+        const { score, shortSummary, questionNumber } = t.data.data
         my.hideLoading()
         my.redirectTo({
-          url: `/pages/co-testResult/co-testResult`
+          url: `/pages/co-testResult/co-testResult?score=${score}&summary=${shortSummary}&num=${questionNumber}`
         })
       } else {
-         my.redirectTo({
-          url: `/pages/co-testResult/co-testResult`
-        })
         my.showToast({
           content: t.data.message,
           success: () => {
