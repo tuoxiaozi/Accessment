@@ -27,8 +27,9 @@ Page({
               my.setStorage({
                 key: 'token',
                 data: result.data.data
-              });
-               my.navigateBack();
+              })
+              // my.navigateTo({url: '/pages/mine/mine'})
+               my.navigateBack()
             }else{
               my.showToast({
                 content: '授权失败',
