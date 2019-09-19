@@ -1,7 +1,10 @@
 <view class="page">
-  <image class="header-img" mode="scaleToFill" src="{{}}"/>
+  <image class="header-img" mode="scaleToFill" src="{{img}}"/>
   <view class="content-wrapper">
-    <view class="content">{{}} </view>
+    <view class="content">
+      <view class="title"><text class="title">{{title}}</text>·<text class="name">{{name}}</text></view>
+      <rich-text nodes="{{comments}}" />
+    </view>
   </view>
   <view class="btn" onTap="start">开始测评</view>
 </view>

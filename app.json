@@ -1,9 +1,9 @@
 {
   "pages": [
     "pages/index/index",
-    "pages/co-testStart/co-testStart",
-    "pages/co-test/co-test",
     "pages/co-testResult/co-testResult",
+    "pages/co-test/co-test",
+    "pages/co-testStart/co-testStart",
     "pages/wikipedia/wikipedia",
     "pages/visonRecord/visonRecord",
     "pages/testResult/testResult",

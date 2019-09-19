@@ -94,6 +94,9 @@ page {
 .fw600{
   font-weight: 600;
 }
+.fw700{
+  font-weight: 700;
+}
 .lh28{
   line-height: 28rpx;
 }

@@ -122,7 +122,7 @@ Page({
 
   // 首页问卷分页查询
   async _querySuvInstancePage () {
-    my.showLoading()
+    my.showLoading({content:'加载中...'})
     let res = await querySuvInstancePage({
       pageNum: 1,
       pageSize: 3
@@ -144,7 +144,7 @@ Page({
     type? my.navigateTo({
       url: `/pages/medical/medical`
     })
-    : my.navigateTo({
+    :code && my.navigateTo({
       url: `/pages/co-testStart/co-testStart?code=${code}&type=${type}`
     })
   }

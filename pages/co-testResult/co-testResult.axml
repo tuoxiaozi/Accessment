@@ -6,7 +6,8 @@
         本调查包括10个问题
       </view>
       <view class="text-score">
-        您的评测得分：<text>48</text>分
+        您的评测得分：
+        <text>48</text>分
       </view>
       <view class="text-desc">
         您近期的心理压力太大，适当的缓解是为了更好的前进，所以当有不良情绪的时候可以通过哭泣、叫喊、运动、唱歌、跳舞等方式宣泄出来，请记住：明天依旧是美好的一天!
@@ -14,13 +15,4 @@
     </view>
   </view>
   <view class="btn" onTap="reStart">重新评测</view>
-</view>
-<view a:if="{{showModal}}" class="modal-wrapper">
-  <view class="modal">
-    <view class="modal-content">收藏小程序，查看测评结果</view>
-    <view class="modal-footer">
-      <view class="modal-btn" onTap="cancel">取消</view>
-      <view class="modal-btn collect" onTap="toggleModal">收藏</view>
-    </view>
-  </view>
 </view>

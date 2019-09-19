@@ -1,6 +1,8 @@
 .page {
   background: #F5F4F9;
+  height: 100%;
 }
+
 .header-img {
   overflow: hidden;
   width: 100%;
@@ -15,16 +17,24 @@
   margin: 30rpx 32rpx 0;
 }
 
+.title {
+  text-align: center;
+}
+
+.name {
+  color: #108EE9;
+}
+
 .content {
   box-sizing: border-box;
   min-height: 690rpx;
-  padding: 45rpx  36rpx 34rpx 33rpx;
+  padding: 45rpx 36rpx 34rpx 33rpx;
   background: #fff;
   border-radius: 4rpx;
 }
 
 .btn {
-  margin: 58rpx 32rpx 48rpx; 
+  margin: 58rpx 32rpx 48rpx;
   width: 686rpx;
   line-height: 80rpx;
   text-align: center;

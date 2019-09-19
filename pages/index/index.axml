@@ -47,7 +47,7 @@
         <view class="test-title">{{item.name}}</view>
         <view a:if="{{item.price}}" class="test-price">{{item.price}}元</view>
         <view a:else class="test-free">免费</view>
-        <view class="test-nums">已测评：{{item.realEvaluationCnt}}人</view>
+        <view class="test-nums">已测评：{{item.evaluationCnt}}人</view>
       </view>
       <image class="test-img" mode="scaleToFill" src="{{item.listImg}}"/>
     </view>

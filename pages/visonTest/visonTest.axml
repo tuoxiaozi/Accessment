@@ -5,7 +5,8 @@
     </view>
     <view class="tip-text"><view  class="{{!isRight?'active-text':''}}">测左眼</view><view class="{{isRight?'active-text':''}}">测右眼</view></view>
   </view>
-  <view class="vision-test {{showRes=='2'?'isWrong':''}}">
+  <view class="vision-test">
+    <image class="sign-img" mode="scaleToFill" src="/assets/{{showRes=='2'?'wrong':showRes==='1'?'right':''}}.png"/>
     <view class="vision-test-wrapper">
       <image src="{{imgUrl}}" style="width: {{imgWidth}}rpx;height: {{imgWidth}}rpx;transform:rotate({{imgDegree}}deg);"></image>
     </view>

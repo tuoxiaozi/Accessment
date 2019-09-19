@@ -27,7 +27,7 @@ Page({
       state: 0, // 是否测评
       gender: void 0, // 性别 1 男 2 女
       showSele: !1,
-      reportId: null, // 用户答题id
+      reportId: void 0, // 用户答题id
     })
     queryUserTcdPositionFlag({
       instanceCode: 'zytcpg'
@@ -41,15 +41,15 @@ Page({
           originalPrice: result.data.data.originalPrice,
           price: result.data.data.price,
           gender: result.data.data.gender,
-          reportId: result.data.data.reportId,
+          reportId: result.data.data.reportId || void 0,
         }),
-          queryUserSuvTcdAnswerDetail({
+        console.log(this.data.reportId)
+          this.data.reportId && queryUserSuvTcdAnswerDetail({
             reportId: this.data.reportId
           }).then(result => {
             let data = result.data.data
               this.setData({
                 curSec: data.positionFlag,
-                state: data.positionFlag
               })
           })
       }
