@@ -19,7 +19,6 @@ Page({
     disabled: true,
   },
   onLoad(opt) {
-    console.log('====>携带参数',opt)
     const {gender, curSec, state} = opt
     if(gender){
       this.setData({
@@ -164,7 +163,6 @@ Page({
   },
   showReport(conclusion, conclusionTxt) {
     my.redirectTo({
-      // url: `/pages/result/result&id=${this.data.resId}`
       url: '/pages/result/result?conclusion=' + conclusion + '&conclusionTxt=' + conclusionTxt
     })
   },

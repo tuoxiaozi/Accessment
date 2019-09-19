@@ -18,7 +18,7 @@ Page({
     this.getReportLst()
   },
   onReachBottom() {
-    if(this.data.pages.page < this.data.pages.pages) {
+    if (this.data.pages.page < this.data.pages.pages) {
       this.setData({
         pages: {
           size: this.data.pages.size,
@@ -39,7 +39,7 @@ Page({
         page: 1
       }
     })
-    var e = t.currentTarget.dataset.tag,n = this
+    var e = t.currentTarget.dataset.tag, n = this
     e != n.data.nowTag && n.setData({
       nowTag: e,
       leftPt: 33.3 * e
@@ -48,25 +48,26 @@ Page({
   // 获取的历史测评列表
   getReportLst(st) {
     let n = this
-    n.setData({st})
+    n.setData({ st })
     my.showLoading({
       content: "加载中...",
     }), queryMyReportListPage({
       pageNum: n.data.pages.page,
-      pageSize:n.data.pages.size,
+      pageSize: n.data.pages.size,
       myState: st
     }).then(s => {
-      if (my.hideLoading(), s.data && s.data.data.rows){
+      if (my.hideLoading(), s.data && s.data.data.rows) {
         n.setData({
-          lists:  [...this.data.lists,...s.data.data.rows],
+          lists: [...this.data.lists, ...s.data.data.rows],
           pages: {
             size: this.data.pages.size,
             pages: s.data.data.total / this.data.pages.size,
             page: this.data.pages.page
           }
         })
+        console.log('list', this.data.lists)
       }
-    }).catch(e=> {
+    }).catch(e => {
       my.hideLoading();
       try {
         t.default.showToast(e.data.message)
@@ -76,22 +77,28 @@ Page({
   switchStateImg() {
     let n = this
     console.log(n.lists)
-    n.lists.map(v =>{
+    n.lists.map(v => {
       v.conclusion.split(',')
     })
     console.log(n.lists)
   },
 
-  toRepeat(e){
-    const data = e.currentTarget.dataset;
-    if(data.state === '1'){
+  toRepeat(e) {
+    const { state, type, conclusion, conclusionTxt } = e.currentTarget.dataset
+    if (type === 'zytcpg') {
+      if (state === '1') {
+        my.redirectTo({
+          url: `/pages/medical/medical`
+        })
+      } else {
+        console.log(type)
+        my.redirectTo({
+          url: `/pages/result/result?conclusion=${conclusion}&conclusionTxt=${conclusionTxt}`
+        })
+      }
+    } else {
       my.redirectTo({
-        url: `/pages/medical/medical`
-      })
-    }else {
-      console.log(data)
-      my.redirectTo({
-        url: `/pages/result/result?conclusion=` + data.conclusion + `&conclusionTxt=` + data.conclusionTxt
+        url: `/pages/result/result?conclusion=` + data.conclusion + `&conclusionTxt=` + conclusionTxt
       })
     }
   }

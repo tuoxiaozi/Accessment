@@ -14,7 +14,10 @@ const api = {
   queryPageByParam,
   queryUserEyeTestReport,
   addEyeTestRecord,
-  getmeCategory
+  getmeCategory,
+  querySuvInstancePage,
+  querySuvInstanceByCode,  
+  querySuvGroupQuestionAnswers
 };
 
 //获取token
@@ -41,7 +44,20 @@ function queryUserEyeTestReport(params) {
   return fetchData('/quesans/eyeTestReport/queryUserEyeTestReport', params);
 }
 
+// 分页查询已发布测评问卷列表
+function querySuvInstancePage(params) {
+  return fetchData('/quesans/suvInstance/querySuvInstancePage', params)
+}
 
+// 查询测评问卷配置信息
+function querySuvInstanceByCode(params) {
+  return fetchData('/quesans/suvInstance/querySuvInstanceByCode', params)
+}
+
+// 健康测评问卷题目及答案选项
+function querySuvGroupQuestionAnswers(params) {
+  return fetchData('/quesans/suvQuestion/querySuvGroupQuestionAnswers', params)
+}
 /* ----------中医测评---------- */
 
 //测评结果页面 获取个人信息

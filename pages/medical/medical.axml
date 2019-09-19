@@ -41,7 +41,7 @@
   </view>
   <view class="paybtnw" a:if="{{isPay === 1}}">
     <view class="paycont">
-      <text>暑期狂欢价：<text style="font-size:38rpx;">￥{{price}}</text></text>
+      <text>国庆狂欢价：<text style="font-size:38rpx;">￥{{price}}</text></text>
       <text class="payorig">原价：￥{{originalPrice}}</text>
     </view>
     <button size="default" type="primary" class="paybtn" onTap="onClickHandler" loading="{{ isPaying }}" disabled="{{ isPaying }}">立即支付</button>

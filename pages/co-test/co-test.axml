@@ -1,0 +1,26 @@
+<view class="ts bgf">
+  <view class="tspw">
+    <view class="tsp">
+       <view class="pct" style="width:{{(testCount + 1)/tsLst.length*100}}%"></view>
+    </view>
+    <view class="count">{{testCount+ 1}}
+      <text class="total">/{{tsLst.length}}</text>
+    </view>
+  </view>
+  <view class="tsw">
+    <view class="tsb">
+      <view class="tsli bgf {{testCount==ti?'sw':''}}" a:for="{{tsLst}}" a:for-index="ti" a:key="{{item.questionId}}">
+        <view class="tsspl">
+          <view class="tsna fw700">{{item.title}}</view>
+          <view class="tsslb">
+            <view onTap="changeSimTest" class="tsck {{sele.isAct?'rd-act':'rd'}}" data-i="{{ti}}" data-j="{{jndex}}" data-queNo="{{item.queNo}}" data-answerNo="{{sele.answerNo}}" hoverClass="rd-act" a:for="{{item.answerList}}" a:for-index="jndex" a:for-item="sele" a:key="{{sele.id}}">
+             <text>{{sele.answer}}</text>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <button  onTap="submitTest" class="btn cf" a:if="{{tsLst.length==testCount+1}}" disabled="{{disabled}}"> 提交查看结果</button>
+  <view  onTap="preQs" class="btn pbtn" a:if="{{testCount!== 0}}"> 上一題</view>
+</view>

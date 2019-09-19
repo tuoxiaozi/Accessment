@@ -1,0 +1,18 @@
+<view class="page">
+  <view class="result-box">
+    <view class="title">评测结果</view>
+    <view class="content">
+      <view class="text-title">
+        本调查包括10个问题
+      </view>
+      <view class="text-score">
+        您的评测得分：
+        <text>48</text>分
+      </view>
+      <view class="text-desc">
+        您近期的心理压力太大，适当的缓解是为了更好的前进，所以当有不良情绪的时候可以通过哭泣、叫喊、运动、唱歌、跳舞等方式宣泄出来，请记住：明天依旧是美好的一天!
+      </view>
+    </view>
+  </view>
+  <view class="btn" onTap="reStart">重新评测</view>
+</view>

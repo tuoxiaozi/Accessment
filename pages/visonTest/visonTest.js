@@ -98,6 +98,7 @@ Page({
             leftEye:0
           })
           console.log('=====>右眼视力', this.data.rightEye)
+          my.showToast({ content: `请遮挡右眼，测左眼`,duration: 1e3});
           this.setData({ // 开始测左眼
             isRight: !1,
             // testindex: this.data.testdata.findIndex(e => e.sight == this.data.rightEye) // 左眼使用上一次的数据
@@ -205,7 +206,6 @@ Page({
   // 页面跳转
   navtoRes() {
     this.jugmentIsNormal()
-    console.log('====>是否正常',this.data.isNormal)
     my.redirectTo({ url: '/pages/testResult/testResult?type=0&res=' + this.data.isNormal+'&left='+this.data.leftEye+'&right='+this.data.rightEye})
   },
 

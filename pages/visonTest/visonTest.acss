@@ -52,6 +52,7 @@ image {
 }
 
 .vision-test {
+  position: relative;
   width: 100%;
   background: #fff;
   display: flex;
@@ -60,8 +61,12 @@ image {
   margin: 30rpx auto;
 }
 
-.isWrong {
-  background: #E07575;
+.sign-img {
+  position: absolute;
+  top: 207rpx;
+  right: 168rpx;
+  width:60rpx;
+  height: 60rpx;
 }
 
 .direction {

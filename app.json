@@ -1,6 +1,9 @@
 {
   "pages": [
     "pages/index/index",
+    "pages/co-testResult/co-testResult",
+    "pages/co-test/co-test",
+    "pages/co-testStart/co-testStart",
     "pages/wikipedia/wikipedia",
     "pages/visonRecord/visonRecord",
     "pages/testResult/testResult",
@@ -15,7 +18,7 @@
     "pages/mytest/mytest",
     "pages/result/result",
     "pages/test/test"
-    ],
+  ],
   "window": {
     "defaultTitle": "医贝健康测评"
   },
@@ -33,13 +36,13 @@
       {
         "pagePath": "pages/health/health",
         "name": "健康",
-         "icon": "/assets/tab_health_normal.png",
+        "icon": "/assets/tab_health_normal.png",
         "activeIcon": "/assets/tab_health_selected.png"
       },
       {
         "pagePath": "pages/mine/mine",
         "name": "我的",
-         "icon": "/assets/tab_my_normal.png",
+        "icon": "/assets/tab_my_normal.png",
         "activeIcon": "/assets/tab_my_selected.png"
       }
     ]
