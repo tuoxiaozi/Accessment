@@ -13,7 +13,7 @@
       </view>
       <view class="mytsr">
         <view a:if="{{t.state === 1}}" class="btn tc cf" onTap="toRepeat" data-state="1">待完成</view>
-        <view a:if="{{t.state === 2 && t.instanceCode !== 'zytcpg'}}"  class="res-desc">{{t.conclusionTxt}}</view>
+        <view a:if="{{t.state === 2 && t.instanceCode !== 'zytcpg'}}"  style="color:{{t.riskColor == 1?'red':t.riskColor==2?'blue':t.riskColor==3?'yellow':'green'}};" class="res-desc">{{t.riskGradeRemark}}</view>
         <image a:else  class="bgimg" mode="scaleToFill" src="../../assets/status{{t.conclusion.split(',')[0]}}.png"/>
       </view>
     </view>

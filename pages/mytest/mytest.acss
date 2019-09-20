@@ -92,7 +92,6 @@
 .mytsr {
   display: flex;
   align-items: center;
-  color: #F4801B;
   font-weight: 700;
   font-size: 36rpx;
 }
