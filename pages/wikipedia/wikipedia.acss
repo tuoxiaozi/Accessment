@@ -28,7 +28,7 @@ swiper {
   background: #fff;
   border-radius: 8rpx;
   transform: scale(.9);
-  transition-duration: .3;
+  transition-duration: .2;
 }
 
 .swipper-img {

@@ -6,15 +6,15 @@
     <view class="cur" style="left:{{leftPt}}%"></view>
   </view>
   <view class="mytsb">
-    <view class="mytsc" a:for="{{lists}}" a:for-item="t" onTap="toRepeat" data-state="{{t.state}}" data-conclusion="{{t.conclusion}}" data-type="{{t.instanceCode}}" data-conclusionTxt="{{t.conclusionTxt}}">
+    <view class="mytsc" a:for="{{lists}}" a:for-item="t" onTap="toRepeat" data-reportId="{{t.reportId}}" data-state="{{t.state}}" data-conclusion="{{t.conclusion}}" data-type="{{t.instanceCode}}" data-conclusionTxt="{{t.conclusionTxt}}">
       <view class="mytsl">
-        <view class="mytstl c3 fs38 fw500">{{t.name}}</view>
+        <view class="mytstl c3 fs38 fw700">{{t.name}}</view>
         <view class="mytsti c9">{{t.modifyTime}}{{t.conclusion}}</view>
       </view>
       <view class="mytsr">
-        <view a:if="{{t.state === 1}}" class="btn tc cf" onTap="toRepeat" data-state="1">待完成</view>
-        <view a:if="{{t.state === 2 && t.instanceCode !== 'zytcpg'}}"  style="color:{{t.riskColor == 1?'red':t.riskColor==2?'blue':t.riskColor==3?'yellow':'green'}};" class="res-desc">{{t.riskGradeRemark}}</view>
-        <image a:else  class="bgimg" mode="scaleToFill" src="../../assets/status{{t.conclusion.split(',')[0]}}.png"/>
+        <view a:if="{{t.state === 1 || t.state === 0 }}" class="btn tc cf" data-state="{{t.state}}" data-type="{{t.instanceCode}}">待完成</view>
+        <view a:elif="{{t.state === 2 && t.instanceCode !== 'zytcpg'}}" class="res-desc">{{t.riskGradeRemark}}</view>
+        <image a:else class="bgimg" mode="scaleToFill" src="../../assets/status{{t.conclusion.split(',')[0]}}.png"/>
       </view>
     </view>
   </view>

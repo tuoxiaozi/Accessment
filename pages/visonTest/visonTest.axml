@@ -10,6 +10,7 @@
     <view class="vision-test-wrapper">
       <image src="{{imgUrl}}" style="width: {{imgWidth}}rpx;height: {{imgWidth}}rpx;transform:rotate({{imgDegree}}deg);"></image>
     </view>
+    <view class="tipbox" a:if="{{showTip}}">{{tipStr}}</view>
   </view>
   <view class="direction">
     <view onTap="direction" class="up" hover-class="btn-active" data-dir="up"></view>

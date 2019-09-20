@@ -37,6 +37,7 @@
   font-weight: 500;
   color: rgba(74, 74, 74, 1);
   line-height: 48rpx;
+  font-weight: 700;
 }
 
 .indicator {

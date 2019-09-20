@@ -1,6 +1,6 @@
 { 
   "defaultTitle": "我的",
-  "pullRefresh": false,
+  "pullRefresh": true,
   "usingComponents": {
   }
 }

@@ -1,1 +1,5 @@
-{}
+{ 
+  "defaultTitle": "我的自测",
+  "pullRefresh": false,
+  "usingComponents": {}
+}

@@ -15,6 +15,9 @@ Page({
     }
   },
   onLoad(t) {
+   },
+  onShow() {
+    this.setData({lists: []})
     this.getReportLst()
   },
   onReachBottom() {
@@ -84,21 +87,21 @@ Page({
   },
 
   toRepeat(e) {
-    const { state, type, conclusion, conclusionTxt } = e.currentTarget.dataset
+    const { state, type, conclusion, conclusionTxt, reportId } = e.currentTarget.dataset
     if (type === 'zytcpg') {
-      if (state === '1') {
-        my.redirectTo({
+      if (state == 1 || state == 0) {
+        console.log(state)
+        my.navigateTo({
           url: `/pages/medical/medical`
         })
       } else {
-        console.log(type)
-        my.redirectTo({
+        my.navigateTo({
           url: `/pages/result/result?conclusion=${conclusion}&conclusionTxt=${conclusionTxt}`
         })
       }
     } else {
-      my.redirectTo({
-        url: `/pages/co-testResult/co-testResult`
+      my.navigateTo({
+        url: `/pages/co-testResult/co-testResult?reportId=${reportId}&jumpType=2`
       })
     }
   }

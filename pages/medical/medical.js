@@ -12,15 +12,6 @@ Page({
   },
   onLoad() { },
   onShow() {
-    // app.getUserInfo();
-    // let t = new Date().getTime();
-    // let flagT = app.authIsOrNot(t);
-    // if (flagT) {
-    //   return !1
-    // } else {
-    // this.auth()
-    // }
-    let that = this
     this.setData({
       isPaying: false, //支付状态
       isPay: 0, // 是否支付

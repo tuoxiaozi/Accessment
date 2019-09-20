@@ -14,9 +14,8 @@ Page({
     this.setData({
       instanceCode: t.code || 'healthQuotient5'  // 设置默认参数，便于调试
     })
-
-    this._querySuvGroupQuestionAnswers()
     this.initTest()
+    this._querySuvGroupQuestionAnswers()
   },
   onShow() {
     setTimeout(() => {
@@ -45,7 +44,8 @@ Page({
   // 题目初始化
   initTest() {
     this.setData({
-      tsLst,
+      tsLst: [],
+      asLst: [],
       testCount: 0
     })
   },
@@ -97,8 +97,9 @@ Page({
   },
   // 提交数据
   submitTest() {
-    let e = this
-    if (e.data.tsLst.length > e.data.asLst.length) {
+    console.log('====>答案',this.data.tsLst.length)
+    console.log('====>答案',this.data.asLst)
+    if (this.data.tsLst.length > this.data.asLst.length) {
       my.showToast({
         type: 'fail',
         content: '选择不全',
@@ -116,10 +117,11 @@ Page({
     }).then(t => {
       console.log(t)
       if (t.data.code === 0) {
-        const { score, shortSummary, questionNumber } = t.data.data
+        const { reportId } = t.data.data
+        console.log(reportId)
         my.hideLoading()
         my.redirectTo({
-          url: `/pages/co-testResult/co-testResult?score=${score}&summary=${shortSummary}&num=${questionNumber}`
+           url: `/pages/co-testResult/co-testResult?reportId=${reportId}&jumpType=1`
         })
       } else {
         my.showToast({

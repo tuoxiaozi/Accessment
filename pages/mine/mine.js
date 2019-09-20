@@ -18,6 +18,9 @@ Page({
     this._queryUserEyeTestReport()
   },
 
+  onPullDownRefresh() {
+    this._queryUserEyeTestReport()
+  },
   // 获取个人信息
   async _queryMyAcctUserInfoAndPoint() {
     let res = await queryMyAcctUserInfoAndPoint()
@@ -33,6 +36,7 @@ Page({
   // 查询用户眼睛健康测试报告
   async _queryUserEyeTestReport() {
     let res = await queryUserEyeTestReport()
+    my.stopPullDownRefresh()
     console.log(res)
     if (res.data.code === 0) {
       let { astigmatismIsNormal, colorBlindIsNormal, myopiaLeft, myopiaRight, userSuveryRecordNumber, userEyeTestRecordNumber } = res.data.data

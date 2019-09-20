@@ -6,17 +6,14 @@ Page({
     code: void 0,
     type: void 0
   },
-  onLoad() { },
+  onLoad() {
+  },
   onShow() {
     this._querySuvInstancePage()
   },
-  // 首页问卷分页查询
+  // 问卷分页查询
   async _querySuvInstancePage() {
-    my.showLoading({ content: '加载中...' })
-    let res = await querySuvInstancePage({
-      pageNum: 1,
-      pageSize: 3
-    })
+    let res = await querySuvInstancePage()
     if (!res.data.code && res.data.data) {
       my.hideLoading()
       const list = res.data.data.rows

@@ -51,7 +51,7 @@
   <view class="draw__cellLine"></view>
   <view class="form-item">
     <view class="form-label">色盲检测</view>
-    <view a:if="{{astigmatismIsNormal !=='undefined'}}" class="form-content">{{colorBlindIsNormal}}</view>
+    <view a:if="{{void 0 !== colorBlindIsNormal }}" class="form-content">{{colorBlindIsNormal}}</view>
     <view a:else class="form-tip">未检测</view>
     <view class="arrow-wrapper" a:if="{{void 0 === colorBlindIsNormal}}">
       <image onTap="reTest" class="form-arrow" data-type="2" src="/assets/jump.png"/>

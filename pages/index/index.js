@@ -12,6 +12,8 @@ Page({
   },
   onLoad(query) {
     // 页面加载
+  },
+  onShow() {
     this._getCategory()
     this._querySuvInstancePage()
   },
@@ -122,7 +124,7 @@ Page({
 
   // 首页问卷分页查询
   async _querySuvInstancePage () {
-    my.showLoading({content:'加载中...'})
+    // my.showLoading({content:'加载中...'})
     let res = await querySuvInstancePage({
       pageNum: 1,
       pageSize: 3

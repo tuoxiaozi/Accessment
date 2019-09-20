@@ -27,7 +27,7 @@ const request = (
            // console.log(res);
             if (res.data.status === 200){
               if (res.data.code === 40301) {
-                my.redirectTo({ url: '/pages/auth/auth'})
+                my.navigateTo({ url: '/pages/auth/auth'})
               } else{
                 resolve(res);
               }

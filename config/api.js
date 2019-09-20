@@ -18,7 +18,8 @@ const api = {
   querySuvInstancePage,
   querySuvInstanceByCode,  
   querySuvGroupQuestionAnswers,
-  saveQuestionAndAnswers
+  saveQuestionAndAnswers,
+  querySuvUserReportDetail
 };
 
 //获取token
@@ -64,6 +65,13 @@ function querySuvGroupQuestionAnswers(params) {
 function saveQuestionAndAnswers(params) {
   return fetchData('/quesans/suvUserReport/saveData', params, 'post')
 }
+
+// 查询用户测评答题记录及结果
+function querySuvUserReportDetail(params) {
+  return fetchData('/quesans/suvUserReport/querySuvUserReportDetail', params);
+}
+
+
 /* ----------中医测评---------- */
 
 // 测评结果页面 获取个人信息

@@ -35,7 +35,6 @@ Page({
       size: "200"
     }],
     testindex: 0, // 初始视力索引
-    testStr: "测右眼，闭左眼",
     curDirection: "right", // 当前方向
     isRight: !0, // 是否右眼
     testDirection: [{ // 图片方向数据
@@ -57,17 +56,18 @@ Page({
     wrongNums: 0, // 错误数目
     eitherEye: "right", // 左右眼
     showRes: "", // '1'：正确， '2'：错误
-    tipStr: ""
+    tipStr: "请遮挡右眼，测左眼",
+    showTip: !1
   },
   onLoad() {
     this.initTest()
   },
   createRandomNum() {
-    let t =  Math.floor(4 * Math.random())
-    while( t === this.data.t) {
-       t = Math.floor(4 * Math.random())
+    let t = Math.floor(4 * Math.random())
+    while (t === this.data.t) {
+      t = Math.floor(4 * Math.random())
     }
-     return t
+    return t
   },
 
   // 测视力初始化
@@ -95,10 +95,12 @@ Page({
             eitherEye: "left",
             rightNums: 0,
             wrongNums: 0,
-            leftEye:0
+            leftEye: 0
           })
           console.log('=====>右眼视力', this.data.rightEye)
-          my.showToast({ content: `请遮挡右眼，测左眼`,duration: 1e3});
+          // my.showToast({ content: `请遮挡右眼，测左眼`,duration: 1e3});
+          this.showTip()
+          // this.setData({showTip: !0})
           this.setData({ // 开始测左眼
             isRight: !1,
             // testindex: this.data.testdata.findIndex(e => e.sight == this.data.rightEye) // 左眼使用上一次的数据
@@ -113,7 +115,7 @@ Page({
             rightNums: 0,
             wrongNums: 0,
             showRes: "",
-            t 
+            t
           })
         } else { // 当前为左眼
           this.setData({
@@ -166,7 +168,7 @@ Page({
           this.setData({
             testindex: this.data.testindex + 1,
             wrongNums: 0,
-            rightNums:0,
+            rightNums: 0,
             t
           })
           console.log('索引', this.data.testindex)
@@ -190,6 +192,7 @@ Page({
     }, 2e2))
   },
 
+  // 添加视力记录
   async _addEyeTestRecord() {
     let res = await addEyeTestRecord({
       myopiaLeft: this.data.leftEye,
@@ -197,16 +200,24 @@ Page({
       type: 1 // 散光类型
     })
     if (res.data.code === 0) {
-     this.navtoRes()
+      this.navtoRes()
     } else {
       console.log(res)
     }
   },
 
+  showTip() {
+    let t = this
+    setTimeout(function() {
+      t.setData({ showTip: !1 })
+    }, 1.5e3)
+    t.setData({ showTip: !0 })
+  },
+
   // 页面跳转
   navtoRes() {
     this.jugmentIsNormal()
-    my.redirectTo({ url: '/pages/testResult/testResult?type=0&res=' + this.data.isNormal+'&left='+this.data.leftEye+'&right='+this.data.rightEye})
+    my.redirectTo({ url: '/pages/testResult/testResult?type=0&res=' + this.data.isNormal + '&left=' + this.data.leftEye + '&right=' + this.data.rightEye })
   },
 
   // 判断是否正常
@@ -222,7 +233,7 @@ Page({
         isNormal: '0'
       })
     }
-    console.log('是否正常',+this.data.isNormal?'正常': '不正常')
+    console.log('是否正常', +this.data.isNormal ? '正常' : '不正常')
     console.log(this.data.isNormal)
   }
 })
