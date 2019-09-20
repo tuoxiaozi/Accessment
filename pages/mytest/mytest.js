@@ -98,7 +98,7 @@ Page({
       }
     } else {
       my.redirectTo({
-        url: `/pages/result/result?conclusion=` + data.conclusion + `&conclusionTxt=` + conclusionTxt
+        url: `/pages/co-testResult/co-testResult`
       })
     }
   }

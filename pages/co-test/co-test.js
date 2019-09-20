@@ -1,4 +1,3 @@
-import { tsLst, secLst, alps } from '/mock/data.js'
 import { saveQuestionAndAnswers, querySuvGroupQuestionAnswers } from '/config/api.js'
 import env from '../../config/env'
 
@@ -99,7 +98,7 @@ Page({
   // 提交数据
   submitTest() {
     let e = this
-    if (tsLst.length > e.data.asLst.length) {
+    if (e.data.tsLst.length > e.data.asLst.length) {
       my.showToast({
         type: 'fail',
         content: '选择不全',
