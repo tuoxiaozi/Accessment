@@ -1,5 +1,5 @@
 .recommand-list {
-  margin: 0 32rpx;
+  padding:32rpx;
 }
 
 .list-item {

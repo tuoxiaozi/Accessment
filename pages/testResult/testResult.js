@@ -55,7 +55,6 @@ Page({
       switch (t.type) {
         // 视力结果
         case '0':
-          console.log('当前视力结果',t)
           this.setData({
             leftEye: t.left,
             rightEye: t.right,
@@ -70,9 +69,8 @@ Page({
             res: t.res === '1' ? '正常' : '疑似散光',
             tip: t.res === '1' ? '恭喜您，您没有散光症状' : '您的疑似有散光症状，建议到专业机构检查',
             bgimg: t.res === '1' ? 'ast-normal' : 'ast-suspected'
-          }),
-            console.log('当前散光结果')
-          break;
+          })
+          break
         // 色盲结果
         case '2':
           this.setData({
@@ -80,8 +78,7 @@ Page({
             res: t.res === '1' ? '正常' : '疑似色盲',
             tip: t.res === '1' ? '恭喜您，您没有色盲症状' : '您的疑似有色盲症状，建议到专业机构检查',
             bgimg: t.res === '1' ? 'color-normal' : 'color-suspected'
-          }),
-            console.log('当前色盲为结果')
+          })
       }
     } else {
       my.navigateBack()
@@ -90,8 +87,8 @@ Page({
 
   // 重新开始
   reTest(e) {
-    const type = e.currentTarget.dataset.type
-    console.log('type', type)
+    const { type } = e.currentTarget.dataset
+    // console.log('type', type)
     switch (type) {
       case '0': //视力检测
         my.redirectTo({

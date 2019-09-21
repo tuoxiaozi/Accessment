@@ -87,7 +87,6 @@ Page({
       showRes: "1", // 回答正确
       rightNums: this.data.rightNums + 1
     }), setTimeout(() => {
-      console.log('对', this.data.showRes, this.data.curDirection)
       if (this.data.rightNums >= 2) { // 正确超过两个
         if ("right" == this.data.eitherEye) { // 当前为右眼， 测左眼
           this.setData({
@@ -97,10 +96,7 @@ Page({
             wrongNums: 0,
             leftEye: 0
           })
-          console.log('=====>右眼视力', this.data.rightEye)
-          // my.showToast({ content: `请遮挡右眼，测左眼`,duration: 1e3});
           this.showTip()
-          // this.setData({showTip: !0})
           this.setData({ // 开始测左眼
             isRight: !1,
             // testindex: this.data.testdata.findIndex(e => e.sight == this.data.rightEye) // 左眼使用上一次的数据
@@ -121,7 +117,6 @@ Page({
           this.setData({
             leftEye: this.data.testdata[this.data.testindex].sight
           })
-          console.log('=====>左眼视力', this.data.leftEye)
           this._addEyeTestRecord()
         }
       } else {  // 正确低于两个，继续切换
@@ -137,7 +132,6 @@ Page({
       showRes: "2",// 回答错误
       wrongNums: this.data.wrongNums + 1
     }), setTimeout(() => {
-      console.log('错', this.data.showRes, this.data.curDirection)
       if (this.data.wrongNums >= 2) { // 错误超过两个
         if (this.data.testindex >= 7) { // 错误超过七个
           if ("right" == this.data.eitherEye) { // 当前为右眼
@@ -149,7 +143,6 @@ Page({
               wrongNums: 0,
               rightNums: 0
             })
-            console.log('=====>右眼视力', this.data.rightEye)
             let t = this.createRandomNum()
             this.data.curDirection = this.data.testDirection[t].direction, this.setData({
               imgWidth: this.data.testdata[this.data.testindex].size,
@@ -171,7 +164,6 @@ Page({
             rightNums: 0,
             t
           })
-          console.log('索引', this.data.testindex)
           this.setData({
             imgWidth: this.data.testdata[this.data.testindex].size,
             imgDegree: this.data.testDirection[t].degree,
@@ -223,7 +215,7 @@ Page({
   // 判断是否正常
   jugmentIsNormal() {
     const leftEye = this.data.leftEye, rightEye = this.data.rightEye
-    console.log('左眼视力===>', leftEye, '右眼视力===>', rightEye)
+    // console.log('左眼视力===>', leftEye, '右眼视力===>', rightEye)
     if (leftEye >= 1.0 && rightEye >= 1.0) {  // 视力正常
       this.setData({
         isNormal: '1'
@@ -233,7 +225,5 @@ Page({
         isNormal: '0'
       })
     }
-    console.log('是否正常', +this.data.isNormal ? '正常' : '不正常')
-    console.log(this.data.isNormal)
   }
 })

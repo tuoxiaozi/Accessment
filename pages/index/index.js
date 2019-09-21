@@ -86,7 +86,6 @@ Page({
   },
   // 点击轮播图跳转
   goToLinkPage(e) {
-    console.log(e);
     const indx = e.currentTarget.dataset.index
     this.categoryJump(indx)
   },
@@ -115,7 +114,7 @@ Page({
             path: `${minpath}`,
             appId
           })
-          console.log(`${minpath}`)
+          // console.log(`${minpath}`)
           // console.log('appid', appId)
           break
       }
@@ -133,7 +132,7 @@ Page({
       my.hideLoading()
       const list = res.data.data.rows
       this.setData({list})
-      console.log(this.data.list)
+      // console.log(this.data.list)
     } else {
       my.hideLoading()
       my.showToast({

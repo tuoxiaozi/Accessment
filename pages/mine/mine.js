@@ -36,8 +36,6 @@ Page({
   // 查询用户眼睛健康测试报告
   async _queryUserEyeTestReport() {
     let res = await queryUserEyeTestReport()
-    my.stopPullDownRefresh()
-    console.log(res)
     if (res.data.code === 0) {
       let { astigmatismIsNormal, colorBlindIsNormal, myopiaLeft, myopiaRight, userSuveryRecordNumber, userEyeTestRecordNumber } = res.data.data
       this.setData({
@@ -66,7 +64,7 @@ Page({
 
   // 处理字符串
   transformStr(val) {
-    if (val !== 'undefined') {
+    if (val !== void 0) {
       if (val === 1) {
         return '正常'
       } else if (val === 0) {

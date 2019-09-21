@@ -1,3 +1,4 @@
+<view class="page">
   <view class="recommand-list">
     <view class="list-item" a:for="{{list}}" data-code="{{item.instanceCode}}" data-type="{{item.isCustomize}}" onTap="toWelcome">
       <view class="list-content">
@@ -9,3 +10,4 @@
       <image class="test-img" mode="scaleToFill" src="{{item.listImg}}"/>
     </view>
   </view>
+</view>

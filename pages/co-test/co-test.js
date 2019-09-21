@@ -31,13 +31,12 @@ Page({
     })
     if (!res.data.code && res.data.data) {
       my.hideLoading()
-      console.log('題目信息', res.data)
       // 暂时没有考虑到分组的情况，后续如需分组， 需要遍历该数组
       const [list, ...arr] = res.data.data.suvGroupList
       const groupCode = list.groupCode
       const tsLst = list.suvQuestionAndAnswerList
       this.setData({ tsLst, groupCode })
-      console.log(this.data.tsLst)
+      // console.log(this.data.tsLst)
     }
   },
 
@@ -53,8 +52,6 @@ Page({
   changeSimTest(t) {
     const e = t.currentTarget.dataset, n = this, asLst = this.data.asLst
     const { i, j, answerId, questionId } = e
-    console.log('类型', typeof answerId)
-    console.log(e)
     asLst[i] = {
       "answerRecordList": [
         {
@@ -79,7 +76,6 @@ Page({
   // 跳转到下一题
   nextQs(s, i) {
     let n = this, o = this.data.tsLst, d = i.i
-    console.log(s, i.i)
     if (null != i.i && null != i.j) {
       for (let u = 0; u < o[i.i].answerList.length; u++) o[i.i].answerList[u].isAct = !1
       o[i.i].answerList[i.j].isAct = !0
@@ -97,8 +93,6 @@ Page({
   },
   // 提交数据
   submitTest() {
-    console.log('====>答案',this.data.tsLst.length)
-    console.log('====>答案',this.data.asLst)
     if (this.data.tsLst.length > this.data.asLst.length) {
       my.showToast({
         type: 'fail',
@@ -115,10 +109,8 @@ Page({
       saveGroupCode: this.data.groupCode,
       replyRecordList: this.data.asLst // 答案
     }).then(t => {
-      console.log(t)
       if (t.data.code === 0) {
         const { reportId } = t.data.data
-        console.log(reportId)
         my.hideLoading()
         my.redirectTo({
            url: `/pages/co-testResult/co-testResult?reportId=${reportId}&jumpType=1`

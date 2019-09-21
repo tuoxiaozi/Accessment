@@ -22,5 +22,5 @@
     </view>
   </view>
   <button  onTap="submitTest" class="btn cf" a:if="{{tsLst.length==testCount+1}}" disabled="{{disabled}}"> 提交查看结果</button>
-  <view  onTap="preQs" class="btn pbtn" a:if="{{testCount!== 0}}"> 上一題</view>
+  <view  onTap="preQs" class="btn pbtn" a:if="{{testCount!== 0}}"> 上一题</view>
 </view>

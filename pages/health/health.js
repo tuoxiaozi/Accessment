@@ -18,7 +18,7 @@ Page({
       my.hideLoading()
       const list = res.data.data.rows
       this.setData({ list })
-      console.log(this.data.list)
+      // console.log(this.data.list)
     } else {
       my.hideLoading()
       my.showToast({

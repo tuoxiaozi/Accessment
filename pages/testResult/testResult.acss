@@ -10,6 +10,7 @@
   height: 350rpx;
   color: #E7EAEC;
   border-radius: 4rpx;
+  background: #ccc;
 }
 
 .content-wrapper {
